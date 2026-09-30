@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tributo-57-v1.1.0';
+const CACHE_NAME = 'tributo-57-v1.2.0';
 
 // Core assets to pre-cache for offline capability on GitHub Pages
 const PRECACHE_ASSETS = [

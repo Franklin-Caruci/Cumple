@@ -39,7 +39,7 @@
   <circle cx="256" cy="256" r="214" fill="none" stroke="url(#goldGrad)" stroke-width="2" stroke-dasharray="8 6" opacity="0.8"/>
 
   <!-- Crown / Laurel Crest Emblem -->
-  <g transform="translate(256, 125) scale(1.15)">
+  <g transform="translate(256, 145) scale(1.2)">
     <!-- Crown Body -->
     <path d="M 0 -35 L 20 -5 L 45 -22 L 35 15 L -35 15 L -45 -22 L -20 -5 Z" fill="url(#goldGrad)" filter="url(#goldGlow)"/>
     <!-- Jewels -->
@@ -49,7 +49,7 @@
   </g>
 
   <!-- Milestone Number '57' -->
-  <text x="256" y="305"
+  <text x="256" y="325"
         font-family="'Cinzel', 'Times New Roman', Georgia, serif"
         font-size="160"
         font-weight="900"
@@ -60,8 +60,8 @@
     57
   </text>
 
-  <!-- Ribbon / Banner Subtitles -->
-  <text x="256" y="360"
+  <!-- Ribbon Subtitle -->
+  <text x="256" y="385"
         font-family="'Montserrat', -apple-system, sans-serif"
         font-size="28"
         font-weight="700"
@@ -69,16 +69,6 @@
         text-anchor="middle"
         fill="#F7DC6F">
     AÑOS
-  </text>
-
-  <text x="256" y="398"
-        font-family="'Cinzel', serif"
-        font-size="14"
-        font-weight="600"
-        letter-spacing="6"
-        text-anchor="middle"
-        fill="#94A3B8">
-    EDICIÓN ESPECIAL
   </text>
 
   <!-- Decorative Stars -->

@@ -1,16 +1,16 @@
+<!DOCTYPE html>
 <html lang="es" class="h-full">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tributo 57 Años | Edición Conmemorativa</title>
+  <title>Tributo 57 Años</title>
 
   <!-- PWA & Mobile Web App Meta Tags -->
   <meta name="theme-color" content="#0a0c10">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title"<!DOCTYPE html>
- content="Tributo 57">
+  <meta name="apple-mobile-web-app-title" content="Tributo 57">
   <!-- PWA Manifest & Icons links for GitHub / Web Hosting -->
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/svg+xml" href="icon.svg">
@@ -137,14 +137,14 @@
 
   <header class="w-full bg-noir-800/80 backdrop-blur-md border-b border-gold-500/20 px-4 py-3 z-30 sticky top-0 flex items-center justify-between">
     <div class="flex items-center space-x-3">
-      <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-gold-700 via-gold-500 to-amber-200 flex items-center justify-center shadow-lg text-black font-cinzel font-black text-lg">
-        57
+      <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-gold-700 via-gold-500 to-amber-200 flex items-center justify-center shadow-lg text-black font-cinzel font-black text-base">
+        <i class="fa-solid fa-crown text-black text-sm"></i>
       </div>
       <div>
         <h1 class="text-sm md:text-base font-cinzel font-bold tracking-wider text-slate-100">
           TRIBUTO CINEMATOGRÁFICO <span class="text-gold-400">9:16</span>
         </h1>
-        <p class="text-xs text-slate-400">Celebración 57 Años • Elegancia Masculina</p>
+        <p class="text-xs text-slate-400">Celebración • Elegancia Masculina</p>
       </div>
     </div>
 
@@ -207,33 +207,16 @@
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/60 pointer-events-none z-10"></div>
             <div class="absolute inset-0 bg-[radial-gradient(circle,transparent_45%,rgba(0,0,0,0.85)_100%)] pointer-events-none z-10"></div>
 
-            <!-- Top Header in 9:16 Viewport -->
+            <!-- Top Header in 9:16 Viewport (Cleaned up, without badges or labels) -->
             <div class="relative z-20 pt-6 px-6 flex justify-between items-start">
-              <div>
-                <span class="inline-block px-2.5 py-0.5 rounded-full bg-gold-500/20 border border-gold-500/40 text-[10px] tracking-widest uppercase font-semibold text-gold-300 backdrop-blur-sm">
-                  Edición Especial
-                </span>
-                <p class="text-xs text-slate-300 font-cinzel mt-1 tracking-wider">Homenaje de Vida</p>
-              </div>
-
-              <!-- Milestone 57 Emblem Badge -->
-              <div class="relative group">
-                <div class="w-12 h-12 rounded-full border-2 border-gold-400/80 bg-noir-900/80 backdrop-blur-md flex flex-col items-center justify-center shadow-lg">
-                  <span class="text-gold-gradient font-cinzel font-black text-lg leading-none">57</span>
-                  <span class="text-[8px] uppercase tracking-tighter text-slate-300 font-semibold">Años</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Audio Playing Visualizer Pill inside Story/Video -->
-            <div class="relative z-20 px-6 self-start">
+              <!-- Audio Playing Visualizer Pill inside Story/Video -->
               <div id="storyAudioIndicator" class="hidden items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 border border-gold-500/30 backdrop-blur-md text-[11px] text-gold-300">
                 <span class="flex gap-0.5 items-end h-3 w-3">
                   <span class="w-0.5 bg-gold-400 animate-pulse h-full"></span>
                   <span class="w-0.5 bg-gold-400 animate-pulse h-2/3"></span>
                   <span class="w-0.5 bg-gold-400 animate-pulse h-4/5"></span>
                 </span>
-                <span id="storyAudioLabel" class="truncate max-w-[120px]">Música Activa</span>
+                <span id="storyAudioLabel" class="truncate max-w-[150px]">Música Activa</span>
               </div>
             </div>
 
@@ -583,7 +566,7 @@
     const pwaInstallBtn = document.getElementById('pwaInstallBtn');
 
     function setupPWA() {
-      // 1.1 Register Service Worker directly for GitHub Pages or fallback to dynamic blob
+      // Register Service Worker directly for GitHub Pages or fallback to dynamic blob
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('./sw.js')
           .then(() => console.log('Service Worker de GitHub registrado correctamente.'))
@@ -602,7 +585,7 @@
           });
       }
 
-      // 1.2 Listen for beforeinstallprompt
+      // Listen for beforeinstallprompt
       window.addEventListener('beforeinstallprompt', (e) => {
         e.preventDefault();
         deferredInstallPrompt = e;
@@ -642,9 +625,9 @@
     // Direct export of manifest.json, sw.js and icon.svg for GitHub repository
     function setupGitHubFilesExporter() {
       const manifestData = `{
-  "name": "Tributo 57 Años - Edición Conmemorativa",
+  "name": "Tributo 57 Años",
   "short_name": "Tributo 57",
-  "description": "Plantilla de video conmemorativa 9:16 con transiciones Ken Burns, música y efectos para celebrar 57 años.",
+  "description": "Plantilla de video 9:16 con transiciones Ken Burns, música y efectos para celebrar 57 años.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
@@ -669,7 +652,7 @@
   ]
 }`;
 
-      const swData = `const CACHE_NAME = 'tributo-57-v1.1.0';
+      const swData = `const CACHE_NAME = 'tributo-57-v1.2.0';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -734,15 +717,14 @@ self.addEventListener('fetch', (e) => {
   <rect width="512" height="512" rx="110" fill="url(#bgGrad)"/>
   <circle cx="256" cy="256" r="226" fill="none" stroke="url(#ringGrad)" stroke-width="4" opacity="0.6"/>
   <circle cx="256" cy="256" r="214" fill="none" stroke="url(#goldGrad)" stroke-width="2" stroke-dasharray="8 6" opacity="0.8"/>
-  <g transform="translate(256, 125) scale(1.15)">
+  <g transform="translate(256, 145) scale(1.2)">
     <path d="M 0 -35 L 20 -5 L 45 -22 L 35 15 L -35 15 L -45 -22 L -20 -5 Z" fill="url(#goldGrad)"/>
     <circle cx="0" cy="-42" r="5" fill="#FFF8DC"/>
     <circle cx="-48" cy="-28" r="4.5" fill="#FFF8DC"/>
     <circle cx="48" cy="-28" r="4.5" fill="#FFF8DC"/>
   </g>
-  <text x="256" y="305" font-family="'Cinzel', Georgia, serif" font-size="160" font-weight="900" text-anchor="middle" fill="url(#goldGrad)">57</text>
-  <text x="256" y="360" font-family="'Montserrat', sans-serif" font-size="28" font-weight="700" letter-spacing="14" text-anchor="middle" fill="#F7DC6F">AÑOS</text>
-  <text x="256" y="398" font-family="'Cinzel', serif" font-size="14" font-weight="600" letter-spacing="6" text-anchor="middle" fill="#94A3B8">EDICIÓN ESPECIAL</text>
+  <text x="256" y="325" font-family="'Cinzel', Georgia, serif" font-size="160" font-weight="900" text-anchor="middle" fill="url(#goldGrad)">57</text>
+  <text x="256" y="385" font-family="'Montserrat', sans-serif" font-size="28" font-weight="700" letter-spacing="14" text-anchor="middle" fill="#F7DC6F">AÑOS</text>
 </svg>`;
 
       function downloadAllPwaFiles() {
@@ -785,7 +767,7 @@ self.addEventListener('fetch', (e) => {
       }, 4000);
     }
 
-    // Initial celebration slide dataset (Preset elegant photos and quotes tailored for a 57th birthday)
+    // Initial celebration slide dataset
     const DEFAULT_SLIDES = [
       {
         id: 1,
@@ -944,7 +926,7 @@ self.addEventListener('fetch', (e) => {
       overlayCaption.style.transform = 'translateY(6px)';
 
       setTimeout(() => {
-        overlayCaption.textContent = currentSlide.quote || `Celebrando con orgullo el cumpleaños 57`;
+        overlayCaption.textContent = currentSlide.quote || `Un momento inolvidable lleno de dicha y alegría.`;
         overlayCaption.style.opacity = '1';
         overlayCaption.style.transform = 'translateY(0)';
       }, 250);
@@ -1130,7 +1112,7 @@ self.addEventListener('fetch', (e) => {
         slides = [{
           id: Date.now(),
           url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop',
-          quote: 'Celebrando 57 años de grandeza',
+          quote: 'Un día memorable para celebrar la vida y la familia',
           transition: 'kenburns-1'
         }];
       } else {
@@ -1156,7 +1138,7 @@ self.addEventListener('fetch', (e) => {
           const newSlide = {
             id: Date.now() + Math.random(),
             url: e.target.result,
-            quote: idx === 0 ? '57 Años de sabiduría, momentos inolvidables y gran templanza.' : 'Honrando un legado extraordinario día a día.',
+            quote: idx === 0 ? '57 Años de sabiduría, momentos inolvidables y gran templanza.' : 'Honrando un camino extraordinario día a día.',
             transition: transitions[idx % transitions.length]
           };
           slides.push(newSlide);
@@ -1372,12 +1354,12 @@ self.addEventListener('fetch', (e) => {
         particles.push(p);
       }
 
-      // Visual pulse on the 57 emblem
-      const emblem = document.querySelector('.aspect-9-16');
-      if (emblem) {
-        emblem.classList.add('gold-glow-intense');
+      // Visual pulse on the 9:16 frame
+      const frameEl = document.querySelector('.aspect-9-16');
+      if (frameEl) {
+        frameEl.classList.add('gold-glow-intense');
         setTimeout(() => {
-          emblem.classList.remove('gold-glow-intense');
+          frameEl.classList.remove('gold-glow-intense');
         }, 1200);
       }
     }
@@ -1677,11 +1659,11 @@ self.addEventListener('fetch', (e) => {
             rCtx.restore();
 
             // 2. Cinematic Vignette and Gold Gradients
-            const gradTop = rCtx.createLinearGradient(0, 0, 0, 450);
-            gradTop.addColorStop(0, 'rgba(0, 0, 0, 0.85)');
+            const gradTop = rCtx.createLinearGradient(0, 0, 0, 350);
+            gradTop.addColorStop(0, 'rgba(0, 0, 0, 0.7)');
             gradTop.addColorStop(1, 'rgba(0, 0, 0, 0)');
             rCtx.fillStyle = gradTop;
-            rCtx.fillRect(0, 0, W, 450);
+            rCtx.fillRect(0, 0, W, 350);
 
             const gradBottom = rCtx.createLinearGradient(0, H - 750, 0, H);
             gradBottom.addColorStop(0, 'rgba(0, 0, 0, 0)');
@@ -1704,43 +1686,7 @@ self.addEventListener('fetch', (e) => {
             });
             rCtx.restore();
 
-            // 4. Luxury Header Badge: "57 Años"
-            rCtx.save();
-            // Outer golden badge
-            const badgeX = W - 140;
-            const badgeY = 120;
-            const badgeR = 60;
-            rCtx.beginPath();
-            rCtx.arc(badgeX, badgeY, badgeR, 0, Math.PI * 2);
-            rCtx.fillStyle = 'rgba(10, 12, 16, 0.85)';
-            rCtx.fill();
-            rCtx.lineWidth = 4;
-            rCtx.strokeStyle = '#d4af37';
-            rCtx.stroke();
-
-            // Badge Text
-            rCtx.font = '900 48px "Cinzel", serif';
-            rCtx.fillStyle = '#f7dc6f';
-            rCtx.textAlign = 'center';
-            rCtx.fillText('57', badgeX, badgeY + 12);
-
-            rCtx.font = '700 16px "Montserrat", sans-serif';
-            rCtx.fillStyle = '#cbd5e1';
-            rCtx.letterSpacing = '2px';
-            rCtx.fillText('AÑOS', badgeX, badgeY + 36);
-
-            // Top Left Category Tag
-            rCtx.font = '600 24px "Montserrat", sans-serif';
-            rCtx.fillStyle = '#f7dc6f';
-            rCtx.textAlign = 'left';
-            rCtx.fillText('EDICIÓN ESPECIAL CONMEMORATIVA', 80, 120);
-
-            rCtx.font = '400 22px "Cinzel", serif';
-            rCtx.fillStyle = '#94a3b8';
-            rCtx.fillText('Homenaje de Vida y Sabiduría', 80, 155);
-            rCtx.restore();
-
-            // 5. Bottom Golden Laurels / Crown Icon
+            // 4. Bottom Golden Laurels / Crown Icon
             rCtx.save();
             rCtx.textAlign = 'center';
             rCtx.fillStyle = '#d4af37';
@@ -1749,7 +1695,7 @@ self.addEventListener('fetch', (e) => {
             rCtx.shadowBlur = 15;
             rCtx.fillText('👑', W / 2, H - 420);
 
-            // 6. Main Titles & Captions
+            // 5. Main Titles & Captions
             rCtx.font = '900 58px "Cinzel", serif';
             const titleGrad = rCtx.createLinearGradient(W/2 - 300, 0, W/2 + 300, 0);
             titleGrad.addColorStop(0, '#FFF4D0');
