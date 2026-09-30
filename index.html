@@ -1,0 +1,1846 @@
+<html lang="es" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tributo 57 Años | Edición Conmemorativa</title>
+
+  <!-- PWA & Mobile Web App Meta Tags -->
+  <meta name="theme-color" content="#0a0c10">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title"<!DOCTYPE html>
+ content="Tributo 57">
+  <!-- PWA Manifest & Icons links for GitHub / Web Hosting -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="apple-touch-icon" href="icon.svg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Cinzel Decorative, Montserrat & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            cinzel: ['Cinzel', 'serif'],
+            playfair: ['Playfair Display', 'serif'],
+            montserrat: ['Montserrat', 'sans-serif'],
+          },
+          colors: {
+            gold: {
+              300: '#f9e79f',
+              400: '#f7dc6f',
+              500: '#d4af37',
+              600: '#c59b27',
+              700: '#997316',
+            },
+            noir: {
+              900: '#0a0c10',
+              800: '#12161f',
+              700: '#1b222f',
+              600: '#252f40'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Gold Gradient Text */
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #FFF4D0 0%, #D4AF37 40%, #AA771C 80%, #F5D77F 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .border-gold-gradient {
+      border-image: linear-gradient(135deg, #d4af37, #aa771c, #fff4d0) 1;
+    }
+
+    .gold-glow {
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+    }
+
+    .gold-glow-intense {
+      box-shadow: 0 0 40px rgba(212, 175, 55, 0.5);
+    }
+
+    /* Ken Burns & Custom Cinematic Effects */
+    @keyframes kenburns-zoom-in {
+      0% { transform: scale(1) translate(0, 0); }
+      100% { transform: scale(1.15) translate(-1%, -1.5%); }
+    }
+
+    @keyframes kenburns-pan-right {
+      0% { transform: scale(1.12) translate(-2%, 0); }
+      100% { transform: scale(1.18) translate(2%, -1%); }
+    }
+
+    @keyframes kenburns-zoom-out {
+      0% { transform: scale(1.18) translate(1%, 1%); }
+      100% { transform: scale(1.02) translate(0, 0); }
+    }
+
+    @keyframes goldPulse {
+      0%, 100% { opacity: 0.8; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.03); }
+    }
+
+    .animate-gold-pulse {
+      animation: goldPulse 3.5s ease-in-out infinite;
+    }
+
+    .kenburns-1 {
+      animation: kenburns-zoom-in 7s ease-out forwards;
+    }
+
+    .kenburns-2 {
+      animation: kenburns-pan-right 7s ease-out forwards;
+    }
+
+    .kenburns-3 {
+      animation: kenburns-zoom-out 7s ease-out forwards;
+    }
+
+    /* Custom Scrollbar for Controls */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0d1117;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2b3547;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #d4af37;
+    }
+
+    /* Ratio 9:16 Safe Frame */
+    .aspect-9-16 {
+      aspect-ratio: 9 / 16;
+    }
+  </style>
+</head>
+<body class="bg-noir-900 text-slate-100 font-montserrat min-h-screen flex flex-col antialiased selection:bg-gold-500 selection:text-black overflow-x-hidden">
+
+  <header class="w-full bg-noir-800/80 backdrop-blur-md border-b border-gold-500/20 px-4 py-3 z-30 sticky top-0 flex items-center justify-between">
+    <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-gold-700 via-gold-500 to-amber-200 flex items-center justify-center shadow-lg text-black font-cinzel font-black text-lg">
+        57
+      </div>
+      <div>
+        <h1 class="text-sm md:text-base font-cinzel font-bold tracking-wider text-slate-100">
+          TRIBUTO CINEMATOGRÁFICO <span class="text-gold-400">9:16</span>
+        </h1>
+        <p class="text-xs text-slate-400">Celebración 57 Años • Elegancia Masculina</p>
+      </div>
+    </div>
+
+    <!-- Quick action buttons -->
+    <div class="flex items-center gap-2">
+      <!-- PWA Install Button (Dynamic) -->
+      <button id="pwaInstallBtn" class="hidden px-3 py-1.5 rounded-lg bg-gold-500/10 hover:bg-gold-500/20 text-gold-400 border border-gold-500/40 text-xs font-semibold transition flex items-center gap-1.5 shadow-sm">
+        <i class="fa-solid fa-mobile-screen-button"></i>
+        <span>Instalar App</span>
+      </button>
+
+      <!-- GitHub PWA Files Downloader -->
+      <button id="downloadPwaFilesBtn" title="Descargar manifest.json, sw.js e icon.svg para GitHub" class="px-2.5 py-1.5 rounded-lg bg-noir-700 hover:bg-gold-500/20 hover:text-gold-400 border border-slate-700 text-xs font-medium transition flex items-center gap-1.5">
+        <i class="fa-brands fa-github text-gold-400"></i>
+        <span class="hidden md:inline">Archivos GitHub</span>
+      </button>
+
+      <!-- Video Export Button -->
+      <button id="openExportModalBtn" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs transition shadow-md flex items-center gap-1.5">
+        <i class="fa-solid fa-download"></i>
+        <span class="hidden sm:inline">Exportar MP4</span>
+        <span class="text-[10px] bg-emerald-900/60 px-1 py-0.5 rounded text-emerald-200">1080p</span>
+      </button>
+
+      <button id="toggleFullscreenBtn" title="Pantalla Completa" class="px-3 py-1.5 rounded-lg bg-noir-700 hover:bg-gold-500/20 hover:text-gold-400 border border-slate-700 text-xs font-medium transition flex items-center gap-1.5">
+        <i class="fa-solid fa-expand"></i>
+        <span class="hidden sm:inline">Pantalla Completa</span>
+      </button>
+
+      <button id="quickConfettiBtn" class="px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-gold-600 to-amber-500 hover:from-gold-500 hover:to-amber-400 text-black font-semibold text-xs transition shadow-md flex items-center gap-1.5">
+        <i class="fa-solid fa-champagne-glasses"></i>
+        <span>¡Brindis!</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="flex-1 grid grid-cols-1 lg:grid-cols-12 gap-6 p-4 md:p-6 max-w-[1600px] w-full mx-auto">
+    
+    <!-- LEFT PANEL: 9:16 PREVIEW VIEWER (Cinematic Showcase) -->
+    <section class="lg:col-span-7 flex flex-col items-center justify-center">
+      
+      <!-- Safe Container for 9:16 Ratio Showcase -->
+      <div class="w-full max-w-[390px] relative">
+        
+        <!-- Luxury Outer Border Frame -->
+        <div class="relative aspect-9-16 w-full rounded-[2.5rem] p-2 bg-gradient-to-b from-gold-500/40 via-noir-700/60 to-gold-600/30 shadow-2xl gold-glow overflow-hidden">
+          
+          <!-- Inner Screen Viewport -->
+          <div id="videoContainer" class="relative w-full h-full rounded-[2.1rem] bg-black overflow-hidden flex flex-col justify-between select-none">
+            
+            <!-- Sparkles & Dust Canvas Background -->
+            <canvas id="sparklesCanvas" class="absolute inset-0 pointer-events-none z-10 w-full h-full"></canvas>
+
+            <!-- Slides Media Layers Container -->
+            <div id="slideViewport" class="absolute inset-0 w-full h-full overflow-hidden">
+              <!-- Slide elements injected dynamically -->
+            </div>
+
+            <!-- Cinematic Vignette & Color Grading Overlays -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/60 pointer-events-none z-10"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle,transparent_45%,rgba(0,0,0,0.85)_100%)] pointer-events-none z-10"></div>
+
+            <!-- Top Header in 9:16 Viewport -->
+            <div class="relative z-20 pt-6 px-6 flex justify-between items-start">
+              <div>
+                <span class="inline-block px-2.5 py-0.5 rounded-full bg-gold-500/20 border border-gold-500/40 text-[10px] tracking-widest uppercase font-semibold text-gold-300 backdrop-blur-sm">
+                  Edición Especial
+                </span>
+                <p class="text-xs text-slate-300 font-cinzel mt-1 tracking-wider">Homenaje de Vida</p>
+              </div>
+
+              <!-- Milestone 57 Emblem Badge -->
+              <div class="relative group">
+                <div class="w-12 h-12 rounded-full border-2 border-gold-400/80 bg-noir-900/80 backdrop-blur-md flex flex-col items-center justify-center shadow-lg">
+                  <span class="text-gold-gradient font-cinzel font-black text-lg leading-none">57</span>
+                  <span class="text-[8px] uppercase tracking-tighter text-slate-300 font-semibold">Años</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Audio Playing Visualizer Pill inside Story/Video -->
+            <div class="relative z-20 px-6 self-start">
+              <div id="storyAudioIndicator" class="hidden items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 border border-gold-500/30 backdrop-blur-md text-[11px] text-gold-300">
+                <span class="flex gap-0.5 items-end h-3 w-3">
+                  <span class="w-0.5 bg-gold-400 animate-pulse h-full"></span>
+                  <span class="w-0.5 bg-gold-400 animate-pulse h-2/3"></span>
+                  <span class="w-0.5 bg-gold-400 animate-pulse h-4/5"></span>
+                </span>
+                <span id="storyAudioLabel" class="truncate max-w-[120px]">Música Activa</span>
+              </div>
+            </div>
+
+            <!-- Bottom Content (Celebratory Captions & Birthday Boy Info) -->
+            <div class="relative z-20 p-6 pb-8 text-center flex flex-col items-center">
+              
+              <!-- Crown / Laurels SVG Ornament -->
+              <div class="w-10 h-6 text-gold-400 mb-1 opacity-90">
+                <svg viewBox="0 0 64 36" fill="currentColor">
+                  <path d="M32 0L39 16L54 6L48 26H16L10 6L25 16L32 0Z"/>
+                  <circle cx="8" cy="4" r="3"/>
+                  <circle cx="56" cy="4" r="3"/>
+                  <circle cx="32" cy="0" r="3"/>
+                </svg>
+              </div>
+
+              <!-- Main Dynamic Headline -->
+              <h2 id="overlayTitle" class="text-2xl font-cinzel font-black tracking-wide text-gold-gradient drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] transition-all duration-500">
+                ¡FELICES 57 AÑOS!
+              </h2>
+
+              <!-- Subject Name -->
+              <h3 id="overlayName" class="text-lg font-playfair italic text-white drop-shadow-md my-0.5 transition-all duration-500">
+                Un Gran Caballero
+              </h3>
+
+              <!-- Dynamic Emotional Quote / Subtitle -->
+              <p id="overlayCaption" class="text-xs text-slate-300 font-montserrat font-light leading-relaxed max-w-[280px] drop-shadow-md mt-1 transition-all duration-500">
+                57 años de carácter, sabiduría, metas cumplidas y una trayectoria intachable.
+              </p>
+
+              <!-- Golden Progress Bar Indicator -->
+              <div class="w-full mt-5 bg-white/20 h-1 rounded-full overflow-hidden backdrop-blur-sm">
+                <div id="timelineProgressBar" class="h-full bg-gradient-to-r from-gold-600 via-gold-400 to-amber-200 w-0 transition-all duration-100 ease-linear"></div>
+              </div>
+
+              <!-- Slides Pagination Dots -->
+              <div id="paginationDots" class="flex justify-center items-center gap-1.5 mt-2.5">
+                <!-- Dots injected via JS -->
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Player Navigation Floating Bar -->
+        <div class="mt-4 flex items-center justify-between bg-noir-800 border border-slate-700/80 rounded-2xl px-5 py-3 shadow-xl">
+          <button id="prevSlideBtn" class="p-2.5 text-slate-300 hover:text-gold-400 hover:bg-noir-700 rounded-xl transition">
+            <i class="fa-solid fa-backward-step"></i>
+          </button>
+
+          <button id="playPauseBtn" class="px-5 py-2.5 bg-gradient-to-r from-gold-500 to-amber-500 hover:from-gold-400 hover:to-amber-400 text-black font-bold rounded-xl shadow-lg transition flex items-center gap-2">
+            <i id="playPauseIcon" class="fa-solid fa-play"></i>
+            <span id="playPauseText" class="text-xs uppercase tracking-wider">Reproducir</span>
+          </button>
+
+          <button id="nextSlideBtn" class="p-2.5 text-slate-300 hover:text-gold-400 hover:bg-noir-700 rounded-xl transition">
+            <i class="fa-solid fa-forward-step"></i>
+          </button>
+
+          <div class="h-6 w-px bg-slate-700"></div>
+
+          <div class="flex items-center gap-2 text-xs text-slate-400">
+            <i class="fa-regular fa-clock text-gold-400"></i>
+            <span id="slideTimeIndicator">4s / foto</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- RIGHT PANEL: CONTENT MANAGEMENT, CUSTOMIZATION & AUDIO -->
+    <section class="lg:col-span-5 flex flex-col gap-5">
+
+      <!-- Navigation Tabs -->
+      <div class="flex border-b border-slate-700 gap-2">
+        <button id="tabPhotosBtn" class="py-2.5 px-4 font-cinzel text-xs tracking-wider font-bold border-b-2 border-gold-400 text-gold-400 transition flex items-center gap-2">
+          <i class="fa-regular fa-images"></i> Fotografías (<span id="photoCount">3</span>)
+        </button>
+        <button id="tabAudioBtn" class="py-2.5 px-4 font-cinzel text-xs tracking-wider font-semibold border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition flex items-center gap-2">
+          <i class="fa-solid fa-music"></i> Audio y Música
+        </button>
+        <button id="tabSettingsBtn" class="py-2.5 px-4 font-cinzel text-xs tracking-wider font-semibold border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition flex items-center gap-2">
+          <i class="fa-solid fa-sliders"></i> Estilo & Texto
+        </button>
+      </div>
+
+      <!-- TAB 1: PHOTO MANAGEMENT -->
+      <div id="tabPhotosContent" class="space-y-4">
+        
+        <!-- Drag & Drop Uploader -->
+        <div id="dropZone" class="border-2 border-dashed border-gold-500/40 hover:border-gold-400 bg-noir-800/60 hover:bg-noir-800/90 rounded-2xl p-6 text-center transition cursor-pointer group">
+          <input type="file" id="fileInput" multiple accept="image/*" class="hidden">
+          <div class="w-12 h-12 mx-auto rounded-full bg-gold-500/10 text-gold-400 flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+          </div>
+          <p class="text-sm font-semibold text-slate-200">Cargar fotos para el Cumpleañero</p>
+          <p class="text-xs text-slate-400 mt-1">Haz clic o arrastra fotos (Formato vertical 9:16 preferido)</p>
+          <div class="mt-3 flex justify-center gap-2">
+            <span class="inline-block text-[10px] bg-slate-800 text-gold-300 border border-slate-700 px-2 py-0.5 rounded">JPG, PNG, WEBP</span>
+            <span class="inline-block text-[10px] bg-slate-800 text-gold-300 border border-slate-700 px-2 py-0.5 rounded">Múltiples fotos</span>
+          </div>
+        </div>
+
+        <!-- Slides List Card Container -->
+        <div class="space-y-2.5">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Secuencia de Imágenes</span>
+            <button id="addPresetPhotosBtn" class="text-xs text-gold-400 hover:text-gold-300 underline font-medium">
+              Cargar fotos de muestra
+            </button>
+          </div>
+
+          <div id="slidesListContainer" class="space-y-3 max-h-[360px] overflow-y-auto pr-1">
+            <!-- Slides entries will be rendered here dynamically -->
+          </div>
+        </div>
+
+      </div>
+
+      <!-- TAB 2: AUDIO & SOUNDTRACK -->
+      <div id="tabAudioContent" class="hidden space-y-4">
+        
+        <div class="bg-noir-800 border border-slate-700 rounded-2xl p-5 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-lg">
+              <i class="fa-solid fa-compact-disc animate-spin" style="animation-duration: 6s;"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-slate-200 font-cinzel">Banda Sonora de la Celebración</h4>
+              <p class="text-xs text-slate-400">Carga la canción favorita de sus 57 años o usa el sintetizador integrado</p>
+            </div>
+          </div>
+
+          <!-- Audio File Upload -->
+          <div class="p-4 bg-noir-900 rounded-xl border border-slate-800">
+            <label class="block text-xs font-medium text-slate-300 mb-2">Subir archivo de música (MP3, WAV, AAC, M4A):</label>
+            <input type="file" id="audioFileInput" accept="audio/*" class="w-full text-xs text-slate-400 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-gold-500 file:text-black hover:file:bg-gold-400 cursor-pointer">
+            <div id="audioFileName" class="text-xs text-gold-400 mt-2 truncate font-medium">Ningún archivo propio cargado (Modo Sintetizador listo)</div>
+          </div>
+
+          <!-- Audio Player Controls -->
+          <div class="space-y-3 pt-2">
+            <div class="flex items-center justify-between text-xs text-slate-400">
+              <span id="audioTrackStatus"><i class="fa-solid fa-volume-high text-gold-400 mr-1"></i> Música Sincronizada</span>
+              <span id="audioTiming">0:00 / 0:00</span>
+            </div>
+
+            <!-- Native Audio element (hidden) -->
+            <audio id="bgAudio" preload="auto"></audio>
+
+            <!-- Volume Slider -->
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-volume-low text-xs text-slate-400"></i>
+              <input type="range" id="volumeSlider" min="0" max="1" step="0.05" value="0.75" class="w-full accent-gold-500 h-1.5 bg-slate-700 rounded-lg cursor-pointer">
+              <i class="fa-solid fa-volume-high text-xs text-gold-400"></i>
+            </div>
+
+            <!-- Built-in Synth Chimes Option -->
+            <div class="flex items-center justify-between p-3 bg-noir-900/80 rounded-xl border border-gold-500/20">
+              <div class="text-xs">
+                <span class="font-semibold text-slate-200 block">Campanadas Festivas Pro</span>
+                <span class="text-slate-400 text-[11px]">Sonido sintético elegante si no tienes audio a mano</span>
+              </div>
+              <button id="toggleSynthBtn" class="px-3 py-1.5 rounded-lg bg-noir-700 hover:bg-gold-500 hover:text-black text-xs font-semibold border border-slate-600 transition">
+                Tocar Acorde
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 bg-gold-500/10 border border-gold-500/30 rounded-2xl">
+          <h5 class="text-xs font-bold text-gold-300 font-cinzel mb-1"><i class="fa-solid fa-lightbulb mr-1"></i> Sugerencias de música para 57 años:</h5>
+          <ul class="text-[11px] text-slate-300 list-disc pl-4 space-y-1">
+            <li>"My Way" (A mi manera) – Frank Sinatra</li>
+            <li>"Celebration" – Kool & The Gang</li>
+            <li>Balada instrumental de guitarra acústica o saxofón sofisticado</li>
+            <li>Salsa clásica o Bolero emblemático de su juventud</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- TAB 3: SETTINGS & CUSTOM TEXTS -->
+      <div id="tabSettingsContent" class="hidden space-y-4">
+        
+        <div class="bg-noir-800 border border-slate-700 rounded-2xl p-5 space-y-4">
+          <h4 class="text-sm font-bold text-slate-200 font-cinzel flex items-center gap-2">
+            <i class="fa-solid fa-sliders text-gold-400"></i> Personalización de Textos
+          </h4>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 mb-1">Nombre del Homenajeado:</label>
+            <input type="text" id="inputHonoreeName" value="Don Fernando Ruiz" class="w-full bg-noir-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-gold-500 transition">
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 mb-1">Título Principal:</label>
+            <input type="text" id="inputMainTitle" value="¡FELICES 57 AÑOS!" class="w-full bg-noir-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-gold-500 transition">
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-slate-400 mb-1">Tiempo por Foto:</label>
+              <select id="slideDurationSelect" class="w-full bg-noir-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-gold-500">
+                <option value="3000">3 Segundos (Rápido)</option>
+                <option value="4000" selected>4 Segundos (Recomendado)</option>
+                <option value="6000">6 Segundos (Pausado)</option>
+                <option value="8000">8 Segundos (Cinemático)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-400 mb-1">Efecto Ken Burns:</label>
+              <select id="kenBurnsSelect" class="w-full bg-noir-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-gold-500">
+                <option value="dynamic" selected>Dinámico Alternado</option>
+                <option value="zoom-in">Zoom In Suave</option>
+                <option value="pan-right">Paneo Panorámico</option>
+                <option value="zoom-out">Zoom Out Revelador</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="pt-2 flex items-center justify-between">
+            <span class="text-xs text-slate-300">Partículas de Polvo Dorado</span>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" id="particlesToggle" checked class="sr-only peer">
+              <div class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gold-500"></div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Export & Share Instructions Card -->
+        <div class="bg-noir-800/80 border border-slate-700 rounded-2xl p-4 text-xs text-slate-300 space-y-2">
+          <div class="font-bold font-cinzel text-gold-400 flex items-center gap-1.5">
+            <i class="fa-solid fa-video"></i> ¿Cómo proyectar o grabar este video?
+          </div>
+          <p class="leading-relaxed">
+            1. Ajusta tus fotos y textos en orden cronológico o emotivo.<br>
+            2. Carga tu canción en la pestaña <strong>Audio</strong>.<br>
+            3. Haz clic en <strong>"Exportar MP4 (1080p)"</strong> para generar automáticamente el video en alta definición listo para redes o proyectores.<br>
+            4. Sube <code>index.html</code>, <code>manifest.json</code>, <code>sw.js</code> e <code>icon.svg</code> a tu repositorio de GitHub para tener la PWA instalable en cualquier celular vía GitHub Pages.
+          </p>
+
+          <div class="pt-2 border-t border-slate-700/60 flex items-center justify-between">
+            <span class="text-[11px] text-slate-400">Descarga los 3 archivos para tu repo:</span>
+            <button id="quickDownloadPwaBtn" class="px-2.5 py-1 rounded-lg bg-gold-500/10 hover:bg-gold-500/20 text-gold-300 border border-gold-500/30 text-[11px] font-semibold transition flex items-center gap-1">
+              <i class="fa-solid fa-file-arrow-down"></i> Descargar PWA Pack
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- MODAL: EXPORT TO MP4 (1080x1920) -->
+  <div id="exportModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="bg-noir-800 border border-gold-500/40 rounded-3xl max-w-md w-full p-6 text-center shadow-2xl relative">
+      <button id="closeExportModalBtn" class="absolute top-4 right-4 text-slate-400 hover:text-white transition p-2">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+
+      <div class="w-14 h-14 mx-auto mb-3 rounded-2xl bg-gradient-to-tr from-gold-600 to-amber-300 flex items-center justify-center text-black text-2xl shadow-lg">
+        <i class="fa-solid fa-film"></i>
+      </div>
+
+      <h3 class="text-xl font-bold font-cinzel text-slate-100 mb-1">Exportar Video Cinemático</h3>
+      <p class="text-xs text-slate-400 mb-5">Resolución nativa Full HD Vertical: <strong>1080 × 1920 (9:16)</strong></p>
+
+      <!-- Render Status Area -->
+      <div id="exportRenderStatus" class="hidden space-y-3 mb-5 p-4 bg-noir-900 rounded-2xl border border-slate-700/80">
+        <div class="flex items-center justify-between text-xs font-semibold">
+          <span class="text-gold-400 flex items-center gap-1.5">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+            <span id="exportStatusText">Grabando fotogramas...</span>
+          </span>
+          <span id="exportPercentage" class="text-slate-200">0%</span>
+        </div>
+
+        <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+          <div id="exportProgressBar" class="h-full bg-gradient-to-r from-gold-600 via-gold-400 to-amber-300 w-0 transition-all duration-150"></div>
+        </div>
+
+        <div class="flex justify-between items-center text-[11px] text-slate-400">
+          <span id="exportSlideProgress">Foto 1 de 3</span>
+          <span id="exportTimeEstimate">Procesando audio e imagen</span>
+        </div>
+
+        <!-- Hidden canvas for real-time 1080x1920 frame rendering -->
+        <canvas id="render1080Canvas" width="1080" height="1920" class="hidden"></canvas>
+      </div>
+
+      <!-- Action Buttons -->
+      <div id="exportActions" class="space-y-3">
+        <div class="bg-noir-900/80 border border-slate-700 rounded-xl p-3 text-left space-y-2">
+          <div class="flex items-center justify-between text-xs">
+            <span class="text-slate-300">Incluir Banda Sonora:</span>
+            <span id="audioInExportStatus" class="font-semibold text-gold-400">Listo</span>
+          </div>
+          <div class="flex items-center justify-between text-xs">
+            <span class="text-slate-300">Calidad:</span>
+            <span class="font-semibold text-emerald-400">1080p Ultra HD</span>
+          </div>
+          <div class="flex items-center justify-between text-xs">
+            <span class="text-slate-300">Duración estimada:</span>
+            <span id="exportEstimatedDuration" class="text-slate-200 font-medium">12 segundos</span>
+          </div>
+        </div>
+
+        <button id="startExportBtn" class="w-full py-3 bg-gradient-to-r from-gold-500 via-amber-400 to-gold-600 hover:from-gold-400 hover:to-amber-300 text-black font-bold font-cinzel tracking-wider rounded-xl transition shadow-lg flex items-center justify-center gap-2">
+          <i class="fa-solid fa-play"></i> Iniciar Procesamiento y Descarga
+        </button>
+      </div>
+
+      <div id="exportCompletedNotice" class="hidden space-y-4">
+        <div class="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl text-emerald-300 text-xs">
+          <i class="fa-solid fa-circle-check text-lg mb-1 block"></i>
+          ¡Video generado exitosamente! La descarga iniciará automáticamente en tu dispositivo.
+        </div>
+        <button id="exportDoneBtn" class="w-full py-2.5 bg-noir-700 hover:bg-noir-600 text-slate-200 text-xs font-semibold rounded-xl transition">
+          Aceptar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Alert Toast Box (Replaces window.alert) -->
+  <div id="toastBox" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-noir-800 border border-gold-500/50 text-slate-100 px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-3 max-w-sm pointer-events-none">
+    <div id="toastIcon" class="w-8 h-8 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center text-sm">
+      <i class="fa-solid fa-bell"></i>
+    </div>
+    <div class="flex-1 text-xs">
+      <p id="toastTitle" class="font-bold text-slate-100 font-cinzel">Notificación</p>
+      <p id="toastMessage" class="text-slate-300 mt-0.5">Mensaje del sistema</p>
+    </div>
+  </div>
+
+  <script>
+    /* ==========================================================================
+       1. PWA REGISTRATION & WEB APP MANIFEST INJECTION
+       ========================================================================== */
+    let deferredInstallPrompt = null;
+    const pwaInstallBtn = document.getElementById('pwaInstallBtn');
+
+    function setupPWA() {
+      // 1.1 Register Service Worker directly for GitHub Pages or fallback to dynamic blob
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js')
+          .then(() => console.log('Service Worker de GitHub registrado correctamente.'))
+          .catch(() => {
+            // Fallback for sandboxed or file:// preview environments
+            const swScript = `
+              const CACHE_NAME = 'tributo-57-fallback-cache';
+              self.addEventListener('install', e => self.skipWaiting());
+              self.addEventListener('activate', e => self.clients.claim());
+              self.addEventListener('fetch', e => e.respondWith(fetch(e.request).catch(() => caches.match(e.request))));
+            `;
+            const swBlob = new Blob([swScript], { type: 'application/javascript' });
+            navigator.serviceWorker.register(URL.createObjectURL(swBlob))
+              .then(() => console.log('SW fallback activo en sandbox.'))
+              .catch(err => console.debug('SW fallback:', err));
+          });
+      }
+
+      // 1.2 Listen for beforeinstallprompt
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredInstallPrompt = e;
+        pwaInstallBtn.classList.remove('hidden');
+      });
+
+      pwaInstallBtn.addEventListener('click', async () => {
+        if (deferredInstallPrompt) {
+          deferredInstallPrompt.prompt();
+          const { outcome } = await deferredInstallPrompt.userChoice;
+          if (outcome === 'accepted') {
+            showToast('¡Instalación lista!', 'La plantilla se ha instalado en tu dispositivo.', 'success');
+          }
+          deferredInstallPrompt = null;
+          pwaInstallBtn.classList.add('hidden');
+        } else {
+          showToast('Instalación en Móvil', 'En iOS toca "Compartir" -> "Agregar a pantalla de inicio". En Android toca los 3 puntos -> "Instalar app".', 'info');
+        }
+      });
+    }
+
+    // Helper to download individual text/data files for GitHub
+    function downloadFile(filename, content, mimeType) {
+      const blob = new Blob([content], { type: mimeType });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => {
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }, 500);
+    }
+
+    // Direct export of manifest.json, sw.js and icon.svg for GitHub repository
+    function setupGitHubFilesExporter() {
+      const manifestData = `{
+  "name": "Tributo 57 Años - Edición Conmemorativa",
+  "short_name": "Tributo 57",
+  "description": "Plantilla de video conmemorativa 9:16 con transiciones Ken Burns, música y efectos para celebrar 57 años.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a0c10",
+  "theme_color": "#0a0c10",
+  "lang": "es",
+  "categories": ["lifestyle", "entertainment", "photo"],
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}`;
+
+      const swData = `const CACHE_NAME = 'tributo-57-v1.1.0';
+const PRECACHE_ASSETS = [
+  './',
+  './index.html',
+  './manifest.json',
+  './icon.svg',
+  'https://cdn.tailwindcss.com',
+  'https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap',
+  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
+];
+
+self.addEventListener('install', (e) => {
+  e.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => {
+      return Promise.allSettled(PRECACHE_ASSETS.map((url) => cache.add(url)));
+    }).then(() => self.skipWaiting())
+  );
+});
+
+self.addEventListener('activate', (e) => {
+  e.waitUntil(
+    caches.keys().then((keys) => Promise.all(
+      keys.map(k => k !== CACHE_NAME ? caches.delete(k) : null)
+    )).then(() => self.clients.claim())
+  );
+});
+
+self.addEventListener('fetch', (e) => {
+  if (e.request.method !== 'GET') return;
+  e.respondWith(
+    fetch(e.request)
+      .then(res => {
+        if (res && res.status === 200 && res.type === 'basic') {
+          const clone = res.clone();
+          caches.open(CACHE_NAME).then(c => c.put(e.request, clone));
+        }
+        return res;
+      })
+      .catch(() => caches.match(e.request).then(c => c || caches.match('./index.html')))
+  );
+});`;
+
+      const iconSvgData = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#1b222f"/>
+      <stop offset="60%" stop-color="#10141b"/>
+      <stop offset="100%" stop-color="#06080b"/>
+    </radialGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF8DC"/>
+      <stop offset="25%" stop-color="#F7DC6F"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="75%" stop-color="#AA771C"/>
+      <stop offset="100%" stop-color="#F5D77F"/>
+    </linearGradient>
+    <linearGradient id="ringGrad" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D4AF37"/>
+      <stop offset="50%" stop-color="#553f10"/>
+      <stop offset="100%" stop-color="#F7DC6F"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="110" fill="url(#bgGrad)"/>
+  <circle cx="256" cy="256" r="226" fill="none" stroke="url(#ringGrad)" stroke-width="4" opacity="0.6"/>
+  <circle cx="256" cy="256" r="214" fill="none" stroke="url(#goldGrad)" stroke-width="2" stroke-dasharray="8 6" opacity="0.8"/>
+  <g transform="translate(256, 125) scale(1.15)">
+    <path d="M 0 -35 L 20 -5 L 45 -22 L 35 15 L -35 15 L -45 -22 L -20 -5 Z" fill="url(#goldGrad)"/>
+    <circle cx="0" cy="-42" r="5" fill="#FFF8DC"/>
+    <circle cx="-48" cy="-28" r="4.5" fill="#FFF8DC"/>
+    <circle cx="48" cy="-28" r="4.5" fill="#FFF8DC"/>
+  </g>
+  <text x="256" y="305" font-family="'Cinzel', Georgia, serif" font-size="160" font-weight="900" text-anchor="middle" fill="url(#goldGrad)">57</text>
+  <text x="256" y="360" font-family="'Montserrat', sans-serif" font-size="28" font-weight="700" letter-spacing="14" text-anchor="middle" fill="#F7DC6F">AÑOS</text>
+  <text x="256" y="398" font-family="'Cinzel', serif" font-size="14" font-weight="600" letter-spacing="6" text-anchor="middle" fill="#94A3B8">EDICIÓN ESPECIAL</text>
+</svg>`;
+
+      function downloadAllPwaFiles() {
+        downloadFile('manifest.json', manifestData, 'application/json');
+        setTimeout(() => downloadFile('sw.js', swData, 'application/javascript'), 300);
+        setTimeout(() => downloadFile('icon.svg', iconSvgData, 'image/svg+xml'), 600);
+        showToast('Descarga iniciada', 'Se descargaron manifest.json, sw.js e icon.svg para tu GitHub.', 'success');
+      }
+
+      const btn1 = document.getElementById('downloadPwaFilesBtn');
+      const btn2 = document.getElementById('quickDownloadPwaBtn');
+      if (btn1) btn1.addEventListener('click', downloadAllPwaFiles);
+      if (btn2) btn2.addEventListener('click', downloadAllPwaFiles);
+    }
+
+    // Helper Toast (instead of alert)
+    function showToast(title, message, type = 'info') {
+      const toast = document.getElementById('toastBox');
+      const tTitle = document.getElementById('toastTitle');
+      const tMsg = document.getElementById('toastMessage');
+      const tIcon = document.getElementById('toastIcon');
+
+      tTitle.textContent = title;
+      tMsg.textContent = message;
+
+      if (type === 'success') {
+        tIcon.className = 'w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm';
+        tIcon.innerHTML = '<i class="fa-solid fa-check"></i>';
+      } else if (type === 'error') {
+        tIcon.className = 'w-8 h-8 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-sm';
+        tIcon.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i>';
+      } else {
+        tIcon.className = 'w-8 h-8 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center text-sm';
+        tIcon.innerHTML = '<i class="fa-solid fa-bell"></i>';
+      }
+
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 4000);
+    }
+
+    // Initial celebration slide dataset (Preset elegant photos and quotes tailored for a 57th birthday)
+    const DEFAULT_SLIDES = [
+      {
+        id: 1,
+        url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop',
+        quote: '57 años construyendo un camino de honestidad, esfuerzo y honor.',
+        transition: 'kenburns-1'
+      },
+      {
+        id: 2,
+        url: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1000&auto=format&fit=crop',
+        quote: 'El mejor pilar para su familia, maestro de vida y amigo incondicional.',
+        transition: 'kenburns-2'
+      },
+      {
+        id: 3,
+        url: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=1000&auto=format&fit=crop',
+        quote: '¡Que comience la mejor etapa! Salud, vitalidad y prosperidad siempre.',
+        transition: 'kenburns-3'
+      }
+    ];
+
+    // State Variables
+    let slides = [...DEFAULT_SLIDES];
+    let currentIndex = 0;
+    let isPlaying = false;
+    let slideTimer = null;
+    let progressTimer = null;
+    let slideDuration = 4000; // ms
+    let progressStep = 50; // ms
+    let currentProgress = 0;
+    let particlesEnabled = true;
+
+    // Audio & Web Audio API Context
+    let audioCtx = null;
+    const bgAudio = document.getElementById('bgAudio');
+
+    // DOM Elements
+    const slideViewport = document.getElementById('slideViewport');
+    const overlayTitle = document.getElementById('overlayTitle');
+    const overlayName = document.getElementById('overlayName');
+    const overlayCaption = document.getElementById('overlayCaption');
+    const timelineProgressBar = document.getElementById('timelineProgressBar');
+    const paginationDots = document.getElementById('paginationDots');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const playPauseIcon = document.getElementById('playPauseIcon');
+    const playPauseText = document.getElementById('playPauseText');
+    const prevSlideBtn = document.getElementById('prevSlideBtn');
+    const nextSlideBtn = document.getElementById('nextSlideBtn');
+    const slidesListContainer = document.getElementById('slidesListContainer');
+    const photoCountEl = document.getElementById('photoCount');
+    const fileInput = document.getElementById('fileInput');
+    const dropZone = document.getElementById('dropZone');
+    const addPresetPhotosBtn = document.getElementById('addPresetPhotosBtn');
+    const quickConfettiBtn = document.getElementById('quickConfettiBtn');
+    const toggleFullscreenBtn = document.getElementById('toggleFullscreenBtn');
+    const videoContainer = document.getElementById('videoContainer');
+    const slideDurationSelect = document.getElementById('slideDurationSelect');
+    const kenBurnsSelect = document.getElementById('kenBurnsSelect');
+    const particlesToggle = document.getElementById('particlesToggle');
+    const inputHonoreeName = document.getElementById('inputHonoreeName');
+    const inputMainTitle = document.getElementById('inputMainTitle');
+    const slideTimeIndicator = document.getElementById('slideTimeIndicator');
+    const storyAudioIndicator = document.getElementById('storyAudioIndicator');
+    const storyAudioLabel = document.getElementById('storyAudioLabel');
+    const audioFileInput = document.getElementById('audioFileInput');
+    const audioFileName = document.getElementById('audioFileName');
+    const volumeSlider = document.getElementById('volumeSlider');
+    const toggleSynthBtn = document.getElementById('toggleSynthBtn');
+
+    // Tab buttons
+    const tabPhotosBtn = document.getElementById('tabPhotosBtn');
+    const tabAudioBtn = document.getElementById('tabAudioBtn');
+    const tabSettingsBtn = document.getElementById('tabSettingsBtn');
+    const tabPhotosContent = document.getElementById('tabPhotosContent');
+    const tabAudioContent = document.getElementById('tabAudioContent');
+    const tabSettingsContent = document.getElementById('tabSettingsContent');
+
+    function switchTab(target) {
+      const tabs = [
+        { btn: tabPhotosBtn, content: tabPhotosContent },
+        { btn: tabAudioBtn, content: tabAudioContent },
+        { btn: tabSettingsBtn, content: tabSettingsContent }
+      ];
+
+      tabs.forEach(tab => {
+        if (tab.btn === target) {
+          tab.btn.classList.add('border-gold-400', 'text-gold-400');
+          tab.btn.classList.remove('border-transparent', 'text-slate-400');
+          tab.content.classList.remove('hidden');
+        } else {
+          tab.btn.classList.remove('border-gold-400', 'text-gold-400');
+          tab.btn.classList.add('border-transparent', 'text-slate-400');
+          tab.content.classList.add('hidden');
+        }
+      });
+    }
+
+    tabPhotosBtn.addEventListener('click', () => switchTab(tabPhotosBtn));
+    tabAudioBtn.addEventListener('click', () => switchTab(tabAudioBtn));
+    tabSettingsBtn.addEventListener('click', () => switchTab(tabSettingsBtn));
+
+    function renderSlideLayers() {
+      slideViewport.innerHTML = '';
+      paginationDots.innerHTML = '';
+
+      if (slides.length === 0) {
+        slideViewport.innerHTML = `
+          <div class="h-full w-full flex flex-col items-center justify-center text-center p-6 bg-noir-800">
+            <i class="fa-solid fa-image text-4xl text-gold-500 mb-2"></i>
+            <p class="text-sm font-semibold text-slate-200">No hay fotos cargadas</p>
+            <p class="text-xs text-slate-400 mt-1">Sube tus fotos para comenzar la presentación.</p>
+          </div>
+        `;
+        return;
+      }
+
+      slides.forEach((slide, index) => {
+        // Slide layer
+        const slideEl = document.createElement('div');
+        slideEl.className = `absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${index === currentIndex ? 'opacity-100 z-1' : 'opacity-0 z-0 pointer-events-none'}`;
+        slideEl.id = `slide-layer-${index}`;
+
+        // Ken burns transition style calculation
+        let animClass = slide.transition || 'kenburns-1';
+        if (kenBurnsSelect.value !== 'dynamic') {
+          animClass = 'kenburns-' + (kenBurnsSelect.value === 'zoom-in' ? '1' : kenBurnsSelect.value === 'pan-right' ? '2' : '3');
+        }
+
+        slideEl.innerHTML = `
+          <div class="w-full h-full overflow-hidden">
+            <img src="${slide.url}" alt="Foto 57 años" class="w-full h-full object-cover select-none ${index === currentIndex ? animClass : ''}">
+          </div>
+        `;
+        slideViewport.appendChild(slideEl);
+
+        // Dot Indicator
+        const dot = document.createElement('button');
+        dot.className = `w-2 h-2 rounded-full transition-all duration-300 ${index === currentIndex ? 'w-6 bg-gold-400' : 'bg-white/40 hover:bg-white/70'}`;
+        dot.title = `Ir a foto ${index + 1}`;
+        dot.addEventListener('click', () => {
+          goToSlide(index);
+        });
+        paginationDots.appendChild(dot);
+      });
+
+      updateCaptionDisplay();
+    }
+
+    function updateCaptionDisplay() {
+      if (slides.length === 0) return;
+
+      const currentSlide = slides[currentIndex];
+      
+      // Update Captions with smooth fade
+      overlayCaption.style.opacity = '0';
+      overlayCaption.style.transform = 'translateY(6px)';
+
+      setTimeout(() => {
+        overlayCaption.textContent = currentSlide.quote || `Celebrando con orgullo el cumpleaños 57`;
+        overlayCaption.style.opacity = '1';
+        overlayCaption.style.transform = 'translateY(0)';
+      }, 250);
+
+      overlayTitle.textContent = inputMainTitle.value;
+      overlayName.textContent = inputHonoreeName.value;
+
+      // Update Pagination Dots
+      const dots = paginationDots.children;
+      for (let i = 0; i < dots.length; i++) {
+        if (i === currentIndex) {
+          dots[i].className = 'w-6 h-2 rounded-full bg-gold-400 transition-all duration-300';
+        } else {
+          dots[i].className = 'w-2 h-2 rounded-full bg-white/40 hover:bg-white/70 transition-all duration-300';
+        }
+      }
+    }
+
+    function goToSlide(newIndex) {
+      if (slides.length === 0) return;
+
+      // Reset layer styling of current
+      const oldLayer = document.getElementById(`slide-layer-${currentIndex}`);
+      if (oldLayer) {
+        oldLayer.classList.remove('opacity-100', 'z-1');
+        oldLayer.classList.add('opacity-0', 'z-0');
+        const oldImg = oldLayer.querySelector('img');
+        if (oldImg) {
+          oldImg.classList.remove('kenburns-1', 'kenburns-2', 'kenburns-3');
+        }
+      }
+
+      currentIndex = (newIndex + slides.length) % slides.length;
+
+      // Activate new layer
+      const nextLayer = document.getElementById(`slide-layer-${currentIndex}`);
+      if (nextLayer) {
+        nextLayer.classList.remove('opacity-0', 'z-0');
+        nextLayer.classList.add('opacity-100', 'z-1');
+
+        const nextImg = nextLayer.querySelector('img');
+        if (nextImg) {
+          let animClass = slides[currentIndex].transition || 'kenburns-1';
+          if (kenBurnsSelect.value !== 'dynamic') {
+            animClass = 'kenburns-' + (kenBurnsSelect.value === 'zoom-in' ? '1' : kenBurnsSelect.value === 'pan-right' ? '2' : '3');
+          }
+          // Restart animation trigger
+          nextImg.classList.remove('kenburns-1', 'kenburns-2', 'kenburns-3');
+          void nextImg.offsetWidth;
+          nextImg.classList.add(animClass);
+        }
+      }
+
+      currentProgress = 0;
+      timelineProgressBar.style.width = '0%';
+      updateCaptionDisplay();
+    }
+
+    function nextSlide() {
+      goToSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentIndex - 1);
+    }
+
+    function startPlayback() {
+      if (slides.length === 0) return;
+      isPlaying = true;
+      playPauseIcon.className = 'fa-solid fa-pause';
+      playPauseText.textContent = 'Pausar';
+
+      // Start music if ready
+      if (bgAudio.src && bgAudio.paused) {
+        bgAudio.play().catch(e => console.log('Audio autoplay prevented:', e));
+      }
+
+      clearInterval(slideTimer);
+      clearInterval(progressTimer);
+
+      progressTimer = setInterval(() => {
+        currentProgress += progressStep;
+        const percentage = Math.min(100, (currentProgress / slideDuration) * 100);
+        timelineProgressBar.style.width = percentage + '%';
+
+        if (currentProgress >= slideDuration) {
+          currentProgress = 0;
+          nextSlide();
+        }
+      }, progressStep);
+    }
+
+    function pausePlayback() {
+      isPlaying = false;
+      playPauseIcon.className = 'fa-solid fa-play';
+      playPauseText.textContent = 'Reproducir';
+      clearInterval(slideTimer);
+      clearInterval(progressTimer);
+
+      if (!bgAudio.paused) {
+        bgAudio.pause();
+      }
+    }
+
+    playPauseBtn.addEventListener('click', () => {
+      if (isPlaying) {
+        pausePlayback();
+      } else {
+        startPlayback();
+      }
+    });
+
+    prevSlideBtn.addEventListener('click', () => {
+      prevSlide();
+      if (isPlaying) startPlayback();
+    });
+
+    nextSlideBtn.addEventListener('click', () => {
+      nextSlide();
+      if (isPlaying) startPlayback();
+    });
+
+    function renderPhotoList() {
+      slidesListContainer.innerHTML = '';
+      photoCountEl.textContent = slides.length;
+
+      slides.forEach((slide, idx) => {
+        const item = document.createElement('div');
+        item.className = 'flex items-center gap-3 p-3 bg-noir-800 rounded-xl border border-slate-700/80 hover:border-gold-500/50 transition group';
+        item.innerHTML = `
+          <div class="relative w-12 h-16 rounded-lg overflow-hidden bg-black flex-shrink-0 border border-slate-600">
+            <img src="${slide.url}" class="w-full h-full object-cover">
+            <span class="absolute bottom-0 left-0 right-0 bg-black/75 text-[9px] text-center font-bold text-gold-300">#${idx + 1}</span>
+          </div>
+
+          <div class="flex-1 min-w-0">
+            <label class="block text-[10px] text-slate-400 font-medium">Frase conmemorativa:</label>
+            <input type="text" data-index="${idx}" value="${slide.quote || ''}" class="slide-quote-input w-full bg-noir-900 border border-slate-700 rounded-lg px-2.5 py-1 text-xs text-slate-200 focus:outline-none focus:border-gold-500 transition mt-0.5">
+          </div>
+
+          <div class="flex flex-col gap-1 items-center justify-center">
+            <button class="btn-delete-slide p-1 text-slate-400 hover:text-red-400 text-xs transition" title="Eliminar" data-index="${idx}">
+              <i class="fa-regular fa-trash-can"></i>
+            </button>
+            <button class="btn-focus-slide p-1 text-slate-400 hover:text-gold-400 text-xs transition" title="Ver en visor" data-index="${idx}">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </div>
+        `;
+        slidesListContainer.appendChild(item);
+      });
+
+      // Bind input events for live quote updating
+      document.querySelectorAll('.slide-quote-input').forEach(input => {
+        input.addEventListener('input', (e) => {
+          const index = parseInt(e.target.getAttribute('data-index'), 10);
+          slides[index].quote = e.target.value;
+          if (index === currentIndex) {
+            updateCaptionDisplay();
+          }
+        });
+      });
+
+      // Bind slide action events
+      document.querySelectorAll('.btn-delete-slide').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const index = parseInt(btn.getAttribute('data-index'), 10);
+          deleteSlide(index);
+        });
+      });
+
+      document.querySelectorAll('.btn-focus-slide').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const index = parseInt(btn.getAttribute('data-index'), 10);
+          goToSlide(index);
+        });
+      });
+    }
+
+    function deleteSlide(index) {
+      if (slides.length <= 1) {
+        // Keep at least 1 placeholder
+        slides = [{
+          id: Date.now(),
+          url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop',
+          quote: 'Celebrando 57 años de grandeza',
+          transition: 'kenburns-1'
+        }];
+      } else {
+        slides.splice(index, 1);
+        if (currentIndex >= slides.length) {
+          currentIndex = 0;
+        }
+      }
+      renderPhotoList();
+      renderSlideLayers();
+    }
+
+    function handleFiles(files) {
+      if (!files || files.length === 0) return;
+
+      const transitions = ['kenburns-1', 'kenburns-2', 'kenburns-3'];
+
+      Array.from(files).forEach((file, idx) => {
+        if (!file.type.startsWith('image/')) return;
+
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const newSlide = {
+            id: Date.now() + Math.random(),
+            url: e.target.result,
+            quote: idx === 0 ? '57 Años de sabiduría, momentos inolvidables y gran templanza.' : 'Honrando un legado extraordinario día a día.',
+            transition: transitions[idx % transitions.length]
+          };
+          slides.push(newSlide);
+          renderPhotoList();
+          renderSlideLayers();
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    fileInput.addEventListener('change', (e) => {
+      handleFiles(e.target.files);
+    });
+
+    dropZone.addEventListener('click', () => fileInput.click());
+
+    ['dragenter', 'dragover'].forEach(eventName => {
+      dropZone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        dropZone.classList.add('border-gold-400', 'bg-noir-800');
+      }, false);
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+      dropZone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('border-gold-400', 'bg-noir-800');
+      }, false);
+    });
+
+    dropZone.addEventListener('drop', (e) => {
+      const dt = e.dataTransfer;
+      const files = dt.files;
+      handleFiles(files);
+    });
+
+    addPresetPhotosBtn.addEventListener('click', () => {
+      slides = [...DEFAULT_SLIDES];
+      currentIndex = 0;
+      renderPhotoList();
+      renderSlideLayers();
+    });
+
+    inputHonoreeName.addEventListener('input', () => {
+      overlayName.textContent = inputHonoreeName.value || 'Homenajeado';
+    });
+
+    inputMainTitle.addEventListener('input', () => {
+      overlayTitle.textContent = inputMainTitle.value || '¡FELICES 57 AÑOS!';
+    });
+
+    slideDurationSelect.addEventListener('change', () => {
+      slideDuration = parseInt(slideDurationSelect.value, 10);
+      slideTimeIndicator.textContent = `${slideDuration / 1000}s / foto`;
+      if (isPlaying) {
+        startPlayback();
+      }
+    });
+
+    kenBurnsSelect.addEventListener('change', () => {
+      renderSlideLayers();
+    });
+
+    particlesToggle.addEventListener('change', () => {
+      particlesEnabled = particlesToggle.checked;
+      const canvas = document.getElementById('sparklesCanvas');
+      canvas.style.display = particlesEnabled ? 'block' : 'none';
+    });
+
+    audioFileInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const audioUrl = URL.createObjectURL(file);
+        bgAudio.src = audioUrl;
+        audioFileName.textContent = `Pista: ${file.name}`;
+        storyAudioLabel.textContent = file.name;
+        storyAudioIndicator.classList.remove('hidden');
+        storyAudioIndicator.classList.add('flex');
+        
+        if (isPlaying) {
+          bgAudio.play();
+        }
+      }
+    });
+
+    volumeSlider.addEventListener('input', () => {
+      bgAudio.volume = parseFloat(volumeSlider.value);
+    });
+
+    // Elegant Celebratory Web Audio Chime Synth
+    function playCelebratoryChime() {
+      try {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContext) return;
+        if (!audioCtx) audioCtx = new AudioContext();
+
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+
+        const chords = [523.25, 659.25, 783.99, 1046.50]; // C Major luxury arpeggio
+        chords.forEach((freq, i) => {
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(freq, audioCtx.currentTime + i * 0.12);
+
+          gain.gain.setValueAtTime(0.001, audioCtx.currentTime + i * 0.12);
+          gain.gain.exponentialRampToValueAtTime(0.2, audioCtx.currentTime + i * 0.12 + 0.05);
+          gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + i * 0.12 + 1.8);
+
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+
+          osc.start(audioCtx.currentTime + i * 0.12);
+          osc.stop(audioCtx.currentTime + i * 0.12 + 1.9);
+        });
+      } catch (err) {
+        console.warn('Web Audio error:', err);
+      }
+    }
+
+    toggleSynthBtn.addEventListener('click', () => {
+      playCelebratoryChime();
+    });
+
+    const canvas = document.getElementById('sparklesCanvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    const PARTICLE_COUNT = 45;
+
+    function resizeCanvas() {
+      const rect = videoContainer.getBoundingClientRect();
+      canvas.width = rect.width;
+      canvas.height = rect.height;
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+
+    class Particle {
+      constructor() {
+        this.reset();
+      }
+
+      reset() {
+        this.x = Math.random() * (canvas.width || 360);
+        this.y = (canvas.height || 640) + Math.random() * 20;
+        this.size = Math.random() * 2.8 + 0.8;
+        this.speedY = -(Math.random() * 0.8 + 0.3);
+        this.speedX = (Math.random() - 0.5) * 0.5;
+        this.opacity = Math.random() * 0.7 + 0.2;
+        this.fade = Math.random() * 0.005 + 0.002;
+        this.hue = Math.random() > 0.3 ? 46 : 38; // Gold to warm amber
+      }
+
+      update() {
+        this.y += this.speedY;
+        this.x += this.speedX;
+        this.opacity -= this.fade;
+
+        if (this.opacity <= 0 || this.y < -10) {
+          this.reset();
+        }
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = `hsla(${this.hue}, 85%, 65%, ${this.opacity})`;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = '#d4af37';
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+    }
+
+    function initParticles() {
+      resizeCanvas();
+      particles = [];
+      for (let i = 0; i < PARTICLE_COUNT; i++) {
+        const p = new Particle();
+        p.y = Math.random() * canvas.height;
+        particles.push(p);
+      }
+    }
+
+    function animateParticles() {
+      if (particlesEnabled) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => {
+          p.update();
+          p.draw();
+        });
+      }
+      requestAnimationFrame(animateParticles);
+    }
+
+    function triggerConfettiBurst() {
+      playCelebratoryChime();
+
+      // Spawn festive gold and champagne sparkles
+      for (let i = 0; i < 40; i++) {
+        const p = new Particle();
+        p.x = canvas.width / 2;
+        p.y = canvas.height * 0.7;
+        const angle = Math.random() * Math.PI * 2;
+        const velocity = Math.random() * 4 + 2;
+        p.speedX = Math.cos(angle) * velocity;
+        p.speedY = Math.sin(angle) * velocity - 2;
+        p.size = Math.random() * 4 + 1.5;
+        p.opacity = 1;
+        p.fade = 0.015;
+        particles.push(p);
+      }
+
+      // Visual pulse on the 57 emblem
+      const emblem = document.querySelector('.aspect-9-16');
+      if (emblem) {
+        emblem.classList.add('gold-glow-intense');
+        setTimeout(() => {
+          emblem.classList.remove('gold-glow-intense');
+        }, 1200);
+      }
+    }
+
+    quickConfettiBtn.addEventListener('click', triggerConfettiBurst);
+
+    toggleFullscreenBtn.addEventListener('click', () => {
+      if (!document.fullscreenElement) {
+        if (videoContainer.requestFullscreen) {
+          videoContainer.requestFullscreen();
+        } else if (videoContainer.webkitRequestFullscreen) {
+          videoContainer.webkitRequestFullscreen();
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    });
+
+    document.addEventListener('fullscreenchange', () => {
+      setTimeout(resizeCanvas, 150);
+    });
+
+    window.addEventListener('load', () => {
+      initParticles();
+      animateParticles();
+      renderPhotoList();
+      renderSlideLayers();
+      setupPWA();
+      setupGitHubFilesExporter();
+      setupVideoExporter();
+    });
+
+    /* ==========================================================================
+       2. FULL HD (1080x1920) MP4 VIDEO EXPORT ENGINE
+       ========================================================================== */
+    function setupVideoExporter() {
+      const openExportModalBtn = document.getElementById('openExportModalBtn');
+      const closeExportModalBtn = document.getElementById('closeExportModalBtn');
+      const exportModal = document.getElementById('exportModal');
+      const startExportBtn = document.getElementById('startExportBtn');
+      const exportRenderStatus = document.getElementById('exportRenderStatus');
+      const exportProgressBar = document.getElementById('exportProgressBar');
+      const exportPercentage = document.getElementById('exportPercentage');
+      const exportStatusText = document.getElementById('exportStatusText');
+      const exportSlideProgress = document.getElementById('exportSlideProgress');
+      const exportActions = document.getElementById('exportActions');
+      const exportCompletedNotice = document.getElementById('exportCompletedNotice');
+      const exportDoneBtn = document.getElementById('exportDoneBtn');
+      const exportEstimatedDuration = document.getElementById('exportEstimatedDuration');
+      const audioInExportStatus = document.getElementById('audioInExportStatus');
+      const renderCanvas = document.getElementById('render1080Canvas');
+      const rCtx = renderCanvas.getContext('2d');
+
+      let isExporting = false;
+      let stopExportRequested = false;
+
+      function updateExportModalInfo() {
+        const totalDurationSec = Math.round((slides.length * slideDuration) / 1000);
+        exportEstimatedDuration.textContent = `${totalDurationSec} segundos (${slides.length} diapositivas)`;
+        
+        if (bgAudio.src && !bgAudio.src.startsWith('blob:null')) {
+          audioInExportStatus.textContent = 'Música del Usuario Sincronizada';
+          audioInExportStatus.className = 'font-semibold text-gold-400';
+        } else {
+          audioInExportStatus.textContent = 'Melodía Conmemorativa Automática';
+          audioInExportStatus.className = 'font-semibold text-slate-300';
+        }
+      }
+
+      openExportModalBtn.addEventListener('click', () => {
+        pausePlayback();
+        updateExportModalInfo();
+        exportModal.classList.remove('hidden');
+        exportRenderStatus.classList.add('hidden');
+        exportCompletedNotice.classList.add('hidden');
+        exportActions.classList.remove('hidden');
+        exportProgressBar.style.width = '0%';
+        exportPercentage.textContent = '0%';
+      });
+
+      closeExportModalBtn.addEventListener('click', () => {
+        if (isExporting) {
+          stopExportRequested = true;
+        }
+        exportModal.classList.add('hidden');
+      });
+
+      exportDoneBtn.addEventListener('click', () => {
+        exportModal.classList.add('hidden');
+      });
+
+      // Helper to preload an image to HTMLImageElement
+      function loadImage(url) {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.crossOrigin = 'anonymous';
+          img.onload = () => resolve(img);
+          img.onerror = () => {
+            // Fallback placeholder image on fail
+            const fallback = new Image();
+            fallback.onload = () => resolve(fallback);
+            fallback.onerror = reject;
+            fallback.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1080&auto=format&fit=crop';
+          };
+          img.src = url;
+        });
+      }
+
+      startExportBtn.addEventListener('click', async () => {
+        if (slides.length === 0) {
+          showToast('Sin imágenes', 'Por favor añade al menos una fotografía antes de exportar.', 'error');
+          return;
+        }
+
+        isExporting = true;
+        stopExportRequested = false;
+        exportActions.classList.add('hidden');
+        exportRenderStatus.classList.remove('hidden');
+        exportCompletedNotice.classList.add('hidden');
+        exportStatusText.textContent = 'Cargando imágenes de alta resolución...';
+
+        try {
+          // Preload all slide images
+          const loadedImages = await Promise.all(slides.map(s => loadImage(s.url)));
+
+          // Canvas setup 1080 x 1920
+          const W = 1080;
+          const H = 1920;
+          renderCanvas.width = W;
+          renderCanvas.height = H;
+
+          // Set up Audio Context and Destination for recording
+          const AudioContext = window.AudioContext || window.webkitAudioContext;
+          let renderAudioCtx = null;
+          let audioDest = null;
+          let audioSourceNode = null;
+
+          if (AudioContext) {
+            renderAudioCtx = new AudioContext();
+            audioDest = renderAudioCtx.createMediaStreamDestination();
+
+            if (bgAudio.src) {
+              try {
+                // Fetch and decode audio for smooth recording
+                const resp = await fetch(bgAudio.src);
+                const arrayBuf = await resp.arrayBuffer();
+                const audioBuffer = await renderAudioCtx.decodeAudioData(arrayBuf);
+                audioSourceNode = renderAudioCtx.createBufferSource();
+                audioSourceNode.buffer = audioBuffer;
+                audioSourceNode.connect(audioDest);
+                audioSourceNode.start(0);
+              } catch (audioErr) {
+                console.warn('No se pudo decodificar audio para export: ', audioErr);
+              }
+            } else {
+              // Generate celebratory background chimes if no audio was uploaded
+              const osc = renderAudioCtx.createOscillator();
+              const gain = renderAudioCtx.createGain();
+              osc.type = 'triangle';
+              osc.frequency.setValueAtTime(523.25, renderAudioCtx.currentTime);
+              gain.gain.setValueAtTime(0.01, renderAudioCtx.currentTime);
+              osc.connect(gain);
+              gain.connect(audioDest);
+              osc.start(0);
+            }
+          }
+
+          // Video Stream Setup
+          const videoStream = renderCanvas.captureStream(30); // 30 FPS Full HD
+          const combinedStream = new MediaStream();
+
+          videoStream.getVideoTracks().forEach(track => combinedStream.addTrack(track));
+          if (audioDest && audioDest.stream.getAudioTracks().length > 0) {
+            audioDest.stream.getAudioTracks().forEach(track => combinedStream.addTrack(track));
+          }
+
+          // Choose best available container/codec
+          let mimeType = 'video/mp4';
+          if (!MediaRecorder.isTypeSupported(mimeType)) {
+            mimeType = 'video/mp4;codecs=avc1';
+          }
+          if (!MediaRecorder.isTypeSupported(mimeType)) {
+            mimeType = 'video/webm;codecs=vp9';
+          }
+          if (!MediaRecorder.isTypeSupported(mimeType)) {
+            mimeType = 'video/webm';
+          }
+
+          const recorder = new MediaRecorder(combinedStream, {
+            mimeType: mimeType,
+            videoBitsPerSecond: 8000000 // 8 Mbps for sharp 1080p
+          });
+
+          const recordedChunks = [];
+          recorder.ondataavailable = (e) => {
+            if (e.data && e.data.size > 0) {
+              recordedChunks.push(e.data);
+            }
+          };
+
+          recorder.onstop = () => {
+            const blob = new Blob(recordedChunks, { type: mimeType });
+            const downloadUrl = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = downloadUrl;
+            
+            // Format file name
+            const cleanName = (inputHonoreeName.value || 'Caballero').trim().replace(/[^a-zA-Z0-9_-]/g, '_');
+            const ext = mimeType.includes('mp4') ? 'mp4' : 'webm';
+            a.download = `Cumpleanos_57_${cleanName}_1080x1920.${ext}`;
+            document.body.appendChild(a);
+            a.click();
+
+            setTimeout(() => {
+              document.body.removeChild(a);
+              URL.revokeObjectURL(downloadUrl);
+            }, 1000);
+
+            exportRenderStatus.classList.add('hidden');
+            exportCompletedNotice.classList.remove('hidden');
+            isExporting = false;
+            showToast('¡Descarga Completa!', 'Tu video 1080x1920 se ha guardado.', 'success');
+          };
+
+          recorder.start();
+
+          // Simulation particles for 1080p render
+          const renderParticles = [];
+          for (let p = 0; p < 70; p++) {
+            renderParticles.push({
+              x: Math.random() * W,
+              y: Math.random() * H,
+              size: Math.random() * 5 + 2,
+              speedY: -(Math.random() * 2 + 1),
+              opacity: Math.random() * 0.8 + 0.2
+            });
+          }
+
+          const totalSlides = slides.length;
+          const fps = 30;
+          const framesPerSlide = Math.round((slideDuration / 1000) * fps);
+          const totalFrames = totalSlides * framesPerSlide;
+          let currentFrame = 0;
+
+          function drawFrame() {
+            if (stopExportRequested) {
+              recorder.stop();
+              if (renderAudioCtx) renderAudioCtx.close();
+              isExporting = false;
+              showToast('Exportación cancelada', 'El proceso fue detenido por el usuario.', 'info');
+              return;
+            }
+
+            const slideIdx = Math.min(totalSlides - 1, Math.floor(currentFrame / framesPerSlide));
+            const frameInSlide = currentFrame % framesPerSlide;
+            const progressInSlide = frameInSlide / framesPerSlide; // 0 to 1
+
+            const img = loadedImages[slideIdx];
+            const slideData = slides[slideIdx];
+
+            // 1. Draw Image with Ken Burns transformation
+            rCtx.save();
+            rCtx.fillStyle = '#0a0c10';
+            rCtx.fillRect(0, 0, W, H);
+
+            // Compute scaling and panning
+            let scale = 1.0 + (progressInSlide * 0.12);
+            let panX = (progressInSlide - 0.5) * 30;
+            let panY = (progressInSlide - 0.5) * 40;
+
+            const mode = kenBurnsSelect.value;
+            if (mode === 'pan-right') {
+              panX = -(progressInSlide - 0.5) * 60;
+            } else if (mode === 'zoom-out') {
+              scale = 1.15 - (progressInSlide * 0.12);
+            }
+
+            const imgRatio = img.width / img.height;
+            const targetRatio = W / H;
+            let drawW, drawH;
+
+            if (imgRatio > targetRatio) {
+              drawH = H * scale;
+              drawW = (H * imgRatio) * scale;
+            } else {
+              drawW = W * scale;
+              drawH = (W / imgRatio) * scale;
+            }
+
+            const offsetX = (W - drawW) / 2 + panX;
+            const offsetY = (H - drawH) / 2 + panY;
+
+            rCtx.drawImage(img, offsetX, offsetY, drawW, drawH);
+            rCtx.restore();
+
+            // 2. Cinematic Vignette and Gold Gradients
+            const gradTop = rCtx.createLinearGradient(0, 0, 0, 450);
+            gradTop.addColorStop(0, 'rgba(0, 0, 0, 0.85)');
+            gradTop.addColorStop(1, 'rgba(0, 0, 0, 0)');
+            rCtx.fillStyle = gradTop;
+            rCtx.fillRect(0, 0, W, 450);
+
+            const gradBottom = rCtx.createLinearGradient(0, H - 750, 0, H);
+            gradBottom.addColorStop(0, 'rgba(0, 0, 0, 0)');
+            gradBottom.addColorStop(0.3, 'rgba(0, 0, 0, 0.65)');
+            gradBottom.addColorStop(1, 'rgba(0, 0, 0, 0.96)');
+            rCtx.fillStyle = gradBottom;
+            rCtx.fillRect(0, H - 750, 0, 750);
+
+            // 3. Floating Gold Particles
+            rCtx.save();
+            renderParticles.forEach(p => {
+              p.y += p.speedY;
+              if (p.y < -10) p.y = H + 10;
+              rCtx.beginPath();
+              rCtx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+              rCtx.fillStyle = `rgba(212, 175, 55, ${p.opacity})`;
+              rCtx.shadowColor = '#d4af37';
+              rCtx.shadowBlur = 10;
+              rCtx.fill();
+            });
+            rCtx.restore();
+
+            // 4. Luxury Header Badge: "57 Años"
+            rCtx.save();
+            // Outer golden badge
+            const badgeX = W - 140;
+            const badgeY = 120;
+            const badgeR = 60;
+            rCtx.beginPath();
+            rCtx.arc(badgeX, badgeY, badgeR, 0, Math.PI * 2);
+            rCtx.fillStyle = 'rgba(10, 12, 16, 0.85)';
+            rCtx.fill();
+            rCtx.lineWidth = 4;
+            rCtx.strokeStyle = '#d4af37';
+            rCtx.stroke();
+
+            // Badge Text
+            rCtx.font = '900 48px "Cinzel", serif';
+            rCtx.fillStyle = '#f7dc6f';
+            rCtx.textAlign = 'center';
+            rCtx.fillText('57', badgeX, badgeY + 12);
+
+            rCtx.font = '700 16px "Montserrat", sans-serif';
+            rCtx.fillStyle = '#cbd5e1';
+            rCtx.letterSpacing = '2px';
+            rCtx.fillText('AÑOS', badgeX, badgeY + 36);
+
+            // Top Left Category Tag
+            rCtx.font = '600 24px "Montserrat", sans-serif';
+            rCtx.fillStyle = '#f7dc6f';
+            rCtx.textAlign = 'left';
+            rCtx.fillText('EDICIÓN ESPECIAL CONMEMORATIVA', 80, 120);
+
+            rCtx.font = '400 22px "Cinzel", serif';
+            rCtx.fillStyle = '#94a3b8';
+            rCtx.fillText('Homenaje de Vida y Sabiduría', 80, 155);
+            rCtx.restore();
+
+            // 5. Bottom Golden Laurels / Crown Icon
+            rCtx.save();
+            rCtx.textAlign = 'center';
+            rCtx.fillStyle = '#d4af37';
+            rCtx.font = '44px "Font Awesome 6 Free"';
+            rCtx.shadowColor = '#d4af37';
+            rCtx.shadowBlur = 15;
+            rCtx.fillText('👑', W / 2, H - 420);
+
+            // 6. Main Titles & Captions
+            rCtx.font = '900 58px "Cinzel", serif';
+            const titleGrad = rCtx.createLinearGradient(W/2 - 300, 0, W/2 + 300, 0);
+            titleGrad.addColorStop(0, '#FFF4D0');
+            titleGrad.addColorStop(0.5, '#D4AF37');
+            titleGrad.addColorStop(1, '#AA771C');
+            rCtx.fillStyle = titleGrad;
+            rCtx.shadowColor = 'rgba(0,0,0,0.9)';
+            rCtx.shadowBlur = 18;
+            rCtx.fillText(inputMainTitle.value || '¡FELICES 57 AÑOS!', W / 2, H - 340);
+
+            // Honoree Name
+            rCtx.font = 'italic 700 42px "Playfair Display", serif';
+            rCtx.fillStyle = '#ffffff';
+            rCtx.shadowColor = '#000000';
+            rCtx.shadowBlur = 12;
+            rCtx.fillText(inputHonoreeName.value || 'Un Gran Caballero', W / 2, H - 280);
+
+            // Slide Quote with text wrap
+            rCtx.font = '300 26px "Montserrat", sans-serif';
+            rCtx.fillStyle = '#e2e8f0';
+            rCtx.shadowBlur = 8;
+            const quoteText = slideData.quote || '57 años de carácter, sabiduría y momentos inolvidables.';
+            wrapText(rCtx, quoteText, W / 2, H - 200, W - 220, 36);
+
+            // Golden Progress Bar at Bottom
+            const barW = W - 200;
+            const barH = 8;
+            const barX = 100;
+            const barY = H - 90;
+            rCtx.fillStyle = 'rgba(255, 255, 255, 0.2)';
+            rCtx.fillRect(barX, barY, barW, barH);
+
+            const totalProg = currentFrame / totalFrames;
+            rCtx.fillStyle = '#d4af37';
+            rCtx.fillRect(barX, barY, barW * totalProg, barH);
+            rCtx.restore();
+
+            // Update modal progress bar
+            currentFrame++;
+            const pct = Math.round((currentFrame / totalFrames) * 100);
+            exportProgressBar.style.width = `${pct}%`;
+            exportPercentage.textContent = `${pct}%`;
+            exportSlideProgress.textContent = `Foto ${slideIdx + 1} de ${totalSlides}`;
+            exportStatusText.textContent = `Renderizando cuadro ${currentFrame} de ${totalFrames}`;
+
+            if (currentFrame < totalFrames) {
+              requestAnimationFrame(drawFrame);
+            } else {
+              setTimeout(() => {
+                recorder.stop();
+                if (renderAudioCtx) renderAudioCtx.close();
+              }, 500);
+            }
+          }
+
+          // Text wrap helper for 1080p canvas
+          function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+            const words = text.split(' ');
+            let line = '';
+            const lines = [];
+
+            for (let n = 0; n < words.length; n++) {
+              const testLine = line + words[n] + ' ';
+              const metrics = ctx.measureText(testLine);
+              if (metrics.width > maxWidth && n > 0) {
+                lines.push(line);
+                line = words[n] + ' ';
+              } else {
+                line = testLine;
+              }
+            }
+            lines.push(line);
+
+            const startY = y - ((lines.length - 1) * lineHeight) / 2;
+            for (let k = 0; k < lines.length; k++) {
+              ctx.fillText(lines[k].trim(), x, startY + (k * lineHeight));
+            }
+          }
+
+          // Start render loop
+          requestAnimationFrame(drawFrame);
+
+        } catch (err) {
+          console.error('Error al exportar video:', err);
+          showToast('Error al procesar video', 'Verifica que las imágenes no tengan restricciones CORS.', 'error');
+          isExporting = false;
+          exportRenderStatus.classList.add('hidden');
+          exportActions.classList.remove('hidden');
+        }
+      });
+    }
+  </script>
+</body>
+</html>

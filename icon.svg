@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <!-- Definitions for Gradients, Glows and Shadows -->
+  <defs>
+    <!-- Background Radial Gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#1b222f"/>
+      <stop offset="60%" stop-color="#10141b"/>
+      <stop offset="100%" stop-color="#06080b"/>
+    </radialGradient>
+
+    <!-- Metallic Gold Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF8DC"/>
+      <stop offset="25%" stop-color="#F7DC6F"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="75%" stop-color="#AA771C"/>
+      <stop offset="100%" stop-color="#F5D77F"/>
+    </linearGradient>
+
+    <!-- Outer Ring Gold Gradient -->
+    <linearGradient id="ringGrad" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D4AF37"/>
+      <stop offset="50%" stop-color="#553f10"/>
+      <stop offset="100%" stop-color="#F7DC6F"/>
+    </linearGradient>
+
+    <!-- Inner Glow Filter -->
+    <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Base Dark Canvas -->
+  <rect width="512" height="512" rx="110" fill="url(#bgGrad)"/>
+
+  <!-- Outer Luxury Gold Double Rings -->
+  <circle cx="256" cy="256" r="226" fill="none" stroke="url(#ringGrad)" stroke-width="4" opacity="0.6"/>
+  <circle cx="256" cy="256" r="214" fill="none" stroke="url(#goldGrad)" stroke-width="2" stroke-dasharray="8 6" opacity="0.8"/>
+
+  <!-- Crown / Laurel Crest Emblem -->
+  <g transform="translate(256, 125) scale(1.15)">
+    <!-- Crown Body -->
+    <path d="M 0 -35 L 20 -5 L 45 -22 L 35 15 L -35 15 L -45 -22 L -20 -5 Z" fill="url(#goldGrad)" filter="url(#goldGlow)"/>
+    <!-- Jewels -->
+    <circle cx="0" cy="-42" r="5" fill="#FFF8DC"/>
+    <circle cx="-48" cy="-28" r="4.5" fill="#FFF8DC"/>
+    <circle cx="48" cy="-28" r="4.5" fill="#FFF8DC"/>
+  </g>
+
+  <!-- Milestone Number '57' -->
+  <text x="256" y="305"
+        font-family="'Cinzel', 'Times New Roman', Georgia, serif"
+        font-size="160"
+        font-weight="900"
+        text-anchor="middle"
+        letter-spacing="2"
+        fill="url(#goldGrad)"
+        filter="url(#goldGlow)">
+    57
+  </text>
+
+  <!-- Ribbon / Banner Subtitles -->
+  <text x="256" y="360"
+        font-family="'Montserrat', -apple-system, sans-serif"
+        font-size="28"
+        font-weight="700"
+        letter-spacing="14"
+        text-anchor="middle"
+        fill="#F7DC6F">
+    AÑOS
+  </text>
+
+  <text x="256" y="398"
+        font-family="'Cinzel', serif"
+        font-size="14"
+        font-weight="600"
+        letter-spacing="6"
+        text-anchor="middle"
+        fill="#94A3B8">
+    EDICIÓN ESPECIAL
+  </text>
+
+  <!-- Decorative Stars -->
+  <g fill="url(#goldGrad)">
+    <polygon points="256,420 259,428 268,428 261,433 263,441 256,436 249,441 251,433 244,428 253,428" transform="translate(-40, 0) scale(0.9)"/>
+    <polygon points="256,420 259,428 268,428 261,433 263,441 256,436 249,441 251,433 244,428 253,428" transform="translate(0, -2) scale(1.1)"/>
+    <polygon points="256,420 259,428 268,428 261,433 263,441 256,436 249,441 251,433 244,428 253,428" transform="translate(40, 0) scale(0.9)"/>
+  </g>
+</svg>
