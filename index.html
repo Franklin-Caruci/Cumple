@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tributo 57 Años</title>
+  <title>Tributo 57 Años • Plantilla Cinemática 9:16</title>
 
   <!-- PWA & Mobile Web App Meta Tags -->
   <meta name="theme-color" content="#0a0c10">
@@ -11,7 +11,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Tributo 57">
-  <!-- PWA Manifest & Icons links for GitHub / Web Hosting -->
+  
+  <!-- PWA Manifest & Icons links -->
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/svg+xml" href="icon.svg">
   <link rel="apple-touch-icon" href="icon.svg">
@@ -55,26 +56,20 @@
   </script>
 
   <style>
-    /* Custom Gold Gradient Text */
     .text-gold-gradient {
       background: linear-gradient(135deg, #FFF4D0 0%, #D4AF37 40%, #AA771C 80%, #F5D77F 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     
-    .border-gold-gradient {
-      border-image: linear-gradient(135deg, #d4af37, #aa771c, #fff4d0) 1;
-    }
-
     .gold-glow {
       box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
     }
 
     .gold-glow-intense {
-      box-shadow: 0 0 40px rgba(212, 175, 55, 0.5);
+      box-shadow: 0 0 40px rgba(212, 175, 55, 0.55);
     }
 
-    /* Ken Burns & Custom Cinematic Effects */
     @keyframes kenburns-zoom-in {
       0% { transform: scale(1) translate(0, 0); }
       100% { transform: scale(1.15) translate(-1%, -1.5%); }
@@ -88,15 +83,6 @@
     @keyframes kenburns-zoom-out {
       0% { transform: scale(1.18) translate(1%, 1%); }
       100% { transform: scale(1.02) translate(0, 0); }
-    }
-
-    @keyframes goldPulse {
-      0%, 100% { opacity: 0.8; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.03); }
-    }
-
-    .animate-gold-pulse {
-      animation: goldPulse 3.5s ease-in-out infinite;
     }
 
     @keyframes clinkGlassLeft {
@@ -147,43 +133,21 @@
       animation: wineLiquidSway 2.8s ease-in-out infinite;
     }
 
-    .kenburns-1 {
-      animation: kenburns-zoom-in 7s ease-out forwards;
-    }
+    .kenburns-1 { animation: kenburns-zoom-in 7s ease-out forwards; }
+    .kenburns-2 { animation: kenburns-pan-right 7s ease-out forwards; }
+    .kenburns-3 { animation: kenburns-zoom-out 7s ease-out forwards; }
 
-    .kenburns-2 {
-      animation: kenburns-pan-right 7s ease-out forwards;
-    }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0d1117; }
+    ::-webkit-scrollbar-thumb { background: #2b3547; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #d4af37; }
 
-    .kenburns-3 {
-      animation: kenburns-zoom-out 7s ease-out forwards;
-    }
-
-    /* Custom Scrollbar for Controls */
-    ::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #0d1117;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #2b3547;
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #d4af37;
-    }
-
-    /* Ratio 9:16 Safe Frame */
-    .aspect-9-16 {
-      aspect-ratio: 9 / 16;
-    }
+    .aspect-9-16 { aspect-ratio: 9 / 16; }
   </style>
 </head>
 <body class="bg-noir-900 text-slate-100 font-montserrat min-h-screen flex flex-col antialiased selection:bg-gold-500 selection:text-black overflow-x-hidden">
 
-  <header class="w-full bg-noir-800/80 backdrop-blur-md border-b border-gold-500/20 px-4 py-3 z-30 sticky top-0 flex items-center justify-between">
+  <header class="w-full bg-noir-800/90 backdrop-blur-md border-b border-gold-500/20 px-4 py-3 z-30 sticky top-0 flex items-center justify-between">
     <div class="flex items-center space-x-3">
       <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-gold-700 via-gold-500 to-amber-200 flex items-center justify-center shadow-lg text-black font-cinzel font-black text-base">
         <i class="fa-solid fa-crown text-black text-sm"></i>
@@ -192,25 +156,22 @@
         <h1 class="text-sm md:text-base font-cinzel font-bold tracking-wider text-slate-100">
           TRIBUTO CINEMATOGRÁFICO <span class="text-gold-400">9:16</span>
         </h1>
-        <p class="text-xs text-slate-400">Celebración • Elegancia Masculina</p>
+        <p class="text-xs text-slate-400">Celebración 57 Años • Gala Masculina</p>
       </div>
     </div>
 
     <!-- Quick action buttons -->
     <div class="flex items-center gap-2">
-      <!-- PWA Install Button (Dynamic) -->
       <button id="pwaInstallBtn" class="hidden px-3 py-1.5 rounded-lg bg-gold-500/10 hover:bg-gold-500/20 text-gold-400 border border-gold-500/40 text-xs font-semibold transition flex items-center gap-1.5 shadow-sm">
         <i class="fa-solid fa-mobile-screen-button"></i>
         <span>Instalar App</span>
       </button>
 
-      <!-- GitHub PWA Files Downloader -->
       <button id="downloadPwaFilesBtn" title="Descargar manifest.json, sw.js e icon.svg para GitHub" class="px-2.5 py-1.5 rounded-lg bg-noir-700 hover:bg-gold-500/20 hover:text-gold-400 border border-slate-700 text-xs font-medium transition flex items-center gap-1.5">
         <i class="fa-brands fa-github text-gold-400"></i>
         <span class="hidden md:inline">Archivos GitHub</span>
       </button>
 
-      <!-- Video Export Button -->
       <button id="openExportModalBtn" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs transition shadow-md flex items-center gap-1.5">
         <i class="fa-solid fa-download"></i>
         <span class="hidden sm:inline">Exportar MP4</span>
@@ -231,14 +192,12 @@
 
   <main class="flex-1 grid grid-cols-1 lg:grid-cols-12 gap-6 p-4 md:p-6 max-w-[1600px] w-full mx-auto">
     
-    <!-- LEFT PANEL: 9:16 PREVIEW VIEWER (Cinematic Showcase) -->
-    <section class="lg:col-span-7 flex flex-col items-center justify-center">
+    <!-- LEFT PANEL: 9:16 PREVIEW VIEWER -->
+    <section class="lg:col-span-5 xl:col-span-5 flex flex-col items-center justify-start">
       
-      <!-- Safe Container for 9:16 Ratio Showcase -->
-      <div class="w-full max-w-[390px] relative">
-        
-        <!-- Luxury Outer Border Frame -->
-        <div class="relative aspect-9-16 w-full rounded-[2.5rem] p-2 bg-gradient-to-b from-gold-500/40 via-noir-700/60 to-gold-600/30 shadow-2xl gold-glow overflow-hidden">
+      <div class="w-full max-w-[380px] relative">
+        <!-- Outer Luxury Frame -->
+        <div class="relative aspect-9-16 w-full rounded-[2.5rem] p-2.5 bg-gradient-to-b from-gold-500/50 via-noir-700/80 to-gold-600/40 shadow-2xl gold-glow overflow-hidden">
           
           <!-- Inner Screen Viewport -->
           <div id="videoContainer" class="relative w-full h-full rounded-[2.1rem] bg-black overflow-hidden flex flex-col justify-between select-none">
@@ -248,30 +207,32 @@
 
             <!-- Slides Media Layers Container -->
             <div id="slideViewport" class="absolute inset-0 w-full h-full overflow-hidden">
-              <!-- Slide elements injected dynamically -->
+              <!-- Slides injected dynamically -->
             </div>
 
             <!-- Cinematic Vignette & Color Grading Overlays -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/60 pointer-events-none z-10"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-black/60 pointer-events-none z-10"></div>
             <div class="absolute inset-0 bg-[radial-gradient(circle,transparent_45%,rgba(0,0,0,0.85)_100%)] pointer-events-none z-10"></div>
 
-            <!-- Top Header in 9:16 Viewport (Cleaned up, without badges or labels) -->
+            <!-- Top Header in 9:16 Viewport -->
             <div class="relative z-20 pt-6 px-6 flex justify-between items-start">
-              <!-- Audio Playing Visualizer Pill inside Story/Video -->
               <div id="storyAudioIndicator" class="hidden items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 border border-gold-500/30 backdrop-blur-md text-[11px] text-gold-300">
                 <span class="flex gap-0.5 items-end h-3 w-3">
                   <span class="w-0.5 bg-gold-400 animate-pulse h-full"></span>
                   <span class="w-0.5 bg-gold-400 animate-pulse h-2/3"></span>
                   <span class="w-0.5 bg-gold-400 animate-pulse h-4/5"></span>
                 </span>
-                <span id="storyAudioLabel" class="truncate max-w-[150px]">Música Activa</span>
+                <span id="storyAudioLabel" class="truncate max-w-[130px]">Música Activa</span>
+              </div>
+              <div class="px-2.5 py-0.5 rounded-full bg-black/60 border border-gold-500/30 text-[10px] text-gold-300 ml-auto font-mono">
+                <span id="viewportSlideIndex">1</span>/<span id="viewportTotalSlides">3</span>
               </div>
             </div>
 
-            <!-- Bottom Content (Celebratory Captions & Birthday Boy Info) -->
-            <div class="relative z-20 p-6 pb-8 text-center flex flex-col items-center">
+            <!-- Bottom Content (Titles & Wine Glasses Animation) -->
+            <div class="relative z-20 p-5 pb-6 text-center flex flex-col items-center">
               
-              <!-- Crown / Laurels SVG Ornament -->
+              <!-- Crown SVG Ornament -->
               <div class="w-10 h-6 text-gold-400 mb-1 opacity-90">
                 <svg viewBox="0 0 64 36" fill="currentColor">
                   <path d="M32 0L39 16L54 6L48 26H16L10 6L25 16L32 0Z"/>
@@ -287,12 +248,12 @@
               </h2>
 
               <!-- Subject Name -->
-              <h3 id="overlayName" class="text-lg font-playfair italic text-white drop-shadow-md my-0.5 transition-all duration-500">
-                Un Gran Caballero
+              <h3 id="overlayName" class="text-base font-playfair italic text-white drop-shadow-md my-0.5 transition-all duration-500">
+                Don Fernando Ruiz
               </h3>
 
-              <!-- Celebratory Wine Glasses Clinking Animation (In place of former phrase) -->
-              <div id="clinkingWineGlassesContainer" class="my-1.5 flex flex-col items-center justify-center transition-all duration-500">
+              <!-- Celebratory Wine Glasses Clinking Animation -->
+              <div id="clinkingWineGlassesContainer" class="my-1 flex flex-col items-center justify-center transition-all duration-500">
                 <div class="relative w-28 h-20 flex items-center justify-center">
                   <!-- Central Toast Sparkle Flare -->
                   <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
@@ -315,62 +276,118 @@
                         <stop offset="40%" stop-color="#b31237"/>
                         <stop offset="100%" stop-color="#58081a"/>
                       </linearGradient>
-                      <linearGradient id="champagneGoldGrad" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stop-color="#fff5cc"/>
-                        <stop offset="45%" stop-color="#e6b800"/>
-                        <stop offset="100%" stop-color="#996e00"/>
-                      </linearGradient>
                     </defs>
 
                     <!-- Left Glass -->
                     <g class="animate-clink-left">
-                      <!-- Base -->
                       <ellipse cx="52" cy="98" rx="19" ry="4" fill="url(#glassStemGrad)" opacity="0.85"/>
-                      <!-- Stem -->
                       <line x1="52" y1="62" x2="52" y2="98" stroke="url(#glassStemGrad)" stroke-width="3" stroke-linecap="round"/>
-                      <!-- Bowl Contour -->
                       <path d="M 33 22 C 32 46, 42 63, 52 63 C 62 63, 72 46, 71 22 Z" fill="rgba(255, 255, 255, 0.08)" stroke="url(#glassStemGrad)" stroke-width="2.2"/>
-                      <!-- Wine Inside Bowl -->
                       <g class="animate-wine-liquid">
                         <path d="M 36 34 C 36 51, 44 60, 52 60 C 60 60, 68 51, 68 34 C 62 36, 42 32, 36 34 Z" fill="url(#wineGrad)"/>
-                        <!-- Wine Reflection highlight -->
                         <path d="M 39 36 Q 42 54 48 58" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
                       </g>
-                      <!-- Rim -->
                       <ellipse cx="52" cy="22" rx="19" ry="3.5" fill="rgba(255,255,255,0.15)" stroke="url(#glassStemGrad)" stroke-width="1.6"/>
                     </g>
 
                     <!-- Right Glass -->
                     <g class="animate-clink-right">
-                      <!-- Base -->
                       <ellipse cx="108" cy="98" rx="19" ry="4" fill="url(#glassStemGrad)" opacity="0.85"/>
-                      <!-- Stem -->
                       <line x1="108" y1="62" x2="108" y2="98" stroke="url(#glassStemGrad)" stroke-width="3" stroke-linecap="round"/>
-                      <!-- Bowl Contour -->
                       <path d="M 89 22 C 88 46, 98 63, 108 63 C 118 63, 128 46, 127 22 Z" fill="rgba(255, 255, 255, 0.08)" stroke="url(#glassStemGrad)" stroke-width="2.2"/>
-                      <!-- Wine Inside Bowl -->
                       <g class="animate-wine-liquid" style="animation-delay: -0.4s;">
                         <path d="M 92 34 C 92 51, 100 60, 108 60 C 116 60, 124 51, 124 34 C 118 36, 98 32, 92 34 Z" fill="url(#wineGrad)"/>
-                        <!-- Wine Reflection highlight -->
                         <path d="M 121 36 Q 118 54 112 58" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
                       </g>
-                      <!-- Rim -->
                       <ellipse cx="108" cy="22" rx="19" ry="3.5" fill="rgba(255,255,255,0.15)" stroke="url(#glassStemGrad)" stroke-width="1.6"/>
                     </g>
                   </svg>
                 </div>
-                <span class="text-[11px] font-cinzel font-bold tracking-widest text-gold-300 drop-shadow mt-0.5 uppercase">
+                <span class="text-[11px] font-cinzel font-bold tracking-widest text-gold-300 drop-shadow uppercase mt-0.5">
                   ¡Salud y Brindis de Honor!
                 </span>
               </div>
 
-              <!-- Dynamic Emotional Quote / Subtitle (Shown if other slide active or custom quote set) -->
+              <!-- Dynamic Emotional Quote / Subtitle -->
               <p id="overlayCaption" class="hidden text-xs text-slate-300 font-montserrat font-light leading-relaxed max-w-[280px] drop-shadow-md mt-1 transition-all duration-500">
                 El mejor pilar para su familia, maestro de vida y amigo incondicional.
               </p>
 
               <!-- Golden Progress Bar Indicator -->
-              <div class="w-full mt-4 bg-white/20 h-1 rounded-full overflow-hidden backdrop-blur-sm">
+              <div class="w-full mt-3 bg-white/20 h-1 rounded-full overflow-hidden backdrop-blur-sm">
+                <div id="timelineProgressBar" class="h-full bg-gradient-to-r from-gold-500 via-amber-400 to-gold-600 w-0 transition-all duration-75"></div>
+              </div>
+
+              <!-- Story Dots Pagination -->
+              <div id="paginationDots" class="flex items-center justify-center gap-1.5 mt-2.5">
+                <!-- Dots generated dynamically -->
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Playback Navigation Controls Bar below 9:16 frame -->
+        <div class="mt-4 bg-noir-800/90 border border-slate-700/80 rounded-2xl p-2.5 flex items-center justify-between shadow-lg">
+          <button id="prevSlideBtn" class="p-2 text-slate-300 hover:text-gold-400 transition" title="Foto Anterior">
+            <i class="fa-solid fa-backward-step text-sm"></i>
+          </button>
+
+          <button id="playPauseBtn" class="px-4 py-1.5 bg-gradient-to-r from-gold-500 to-amber-400 hover:from-gold-400 hover:to-amber-300 text-black font-bold text-xs rounded-xl shadow transition flex items-center gap-1.5">
+            <i id="playPauseIcon" class="fa-solid fa-play text-xs"></i>
+            <span id="playPauseText">Reproducir</span>
+          </button>
+
+          <button id="nextSlideBtn" class="p-2 text-slate-300 hover:text-gold-400 transition" title="Siguiente Foto">
+            <i class="fa-solid fa-forward-step text-sm"></i>
+          </button>
+
+          <div class="text-[11px] text-slate-400 font-mono pl-2 border-l border-slate-700">
+            <span id="slideTimeIndicator">4s / foto</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- RIGHT PANEL: CONTROLS & MANAGEMENT (Photos, Music, Texts) -->
+    <section class="lg:col-span-7 xl:col-span-7 space-y-4">
+      
+      <!-- Tab Navigation Header -->
+      <div class="flex items-center border-b border-slate-700/80 bg-noir-800/50 p-1.5 rounded-2xl">
+        <button id="tabPhotosBtn" class="flex-1 py-2.5 px-3 text-xs md:text-sm font-semibold rounded-xl text-gold-400 border-b-2 border-gold-400 transition flex items-center justify-center gap-2">
+          <i class="fa-regular fa-images"></i>
+          <span>Fotos y Secuencia (<span id="photoCount">3</span>)</span>
+        </button>
+
+        <button id="tabAudioBtn" class="flex-1 py-2.5 px-3 text-xs md:text-sm font-semibold rounded-xl text-slate-400 hover:text-slate-200 transition flex items-center justify-center gap-2">
+          <i class="fa-solid fa-music"></i>
+          <span>Banda Sonora</span>
+        </button>
+
+        <button id="tabSettingsBtn" class="flex-1 py-2.5 px-3 text-xs md:text-sm font-semibold rounded-xl text-slate-400 hover:text-slate-200 transition flex items-center justify-center gap-2">
+          <i class="fa-solid fa-sliders"></i>
+          <span>Textos y Estilos</span>
+        </button>
+      </div>
+
+      <!-- TAB 1: PHOTOS & SEQUENCE -->
+      <div id="tabPhotosContent" class="space-y-4">
+        
+        <!-- Drag & Drop / Upload Box -->
+        <div id="dropZone" class="border-2 border-dashed border-slate-700 hover:border-gold-500/70 bg-noir-800/40 hover:bg-noir-800/80 rounded-2xl p-6 text-center transition cursor-pointer group">
+          <input type="file" id="fileInput" multiple accept="image/*" class="hidden">
+          <div class="w-12 h-12 mx-auto mb-2 rounded-2xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-xl group-hover:scale-110 transition duration-300">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+          </div>
+          <p class="text-sm font-semibold text-slate-200">
+            Arrastra tus fotos verticales aquí o <span class="text-gold-400 underline">haz clic para examinar</span>
+          </p>
+          <p class="text-xs text-slate-400 mt-1">Soporta JPG, PNG, WEBP. Se optimizan automáticamente al formato 9:16.</p>
+        </div>
+
+        <!-- Slides List & Customizer -->
         <div class="space-y-2.5">
           <div class="flex items-center justify-between">
             <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Secuencia de Imágenes</span>
@@ -379,8 +396,8 @@
             </button>
           </div>
 
-          <div id="slidesListContainer" class="space-y-3 max-h-[360px] overflow-y-auto pr-1">
-            <!-- Slides entries will be rendered here dynamically -->
+          <div id="slidesListContainer" class="space-y-3 max-h-[380px] overflow-y-auto pr-1">
+            <!-- Dynamic slide items injected via JavaScript -->
           </div>
         </div>
 
@@ -396,7 +413,7 @@
             </div>
             <div>
               <h4 class="text-sm font-bold text-slate-200 font-cinzel">Banda Sonora de la Celebración</h4>
-              <p class="text-xs text-slate-400">Carga la canción favorita de sus 57 años o usa el sintetizador integrado</p>
+              <p class="text-xs text-slate-400">Carga la música favorita de sus 57 años o usa el sintetizador conmemorativo</p>
             </div>
           </div>
 
@@ -404,10 +421,10 @@
           <div class="p-4 bg-noir-900 rounded-xl border border-slate-800">
             <label class="block text-xs font-medium text-slate-300 mb-2">Subir archivo de música (MP3, WAV, AAC, M4A):</label>
             <input type="file" id="audioFileInput" accept="audio/*" class="w-full text-xs text-slate-400 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-gold-500 file:text-black hover:file:bg-gold-400 cursor-pointer">
-            <div id="audioFileName" class="text-xs text-gold-400 mt-2 truncate font-medium">Ningún archivo propio cargado (Modo Sintetizador listo)</div>
+            <div id="audioFileName" class="text-xs text-gold-400 mt-2 truncate font-medium">Ningún archivo cargado (Modo Sintetizador listo)</div>
           </div>
 
-          <!-- Audio Player Controls -->
+          <!-- Audio Controls -->
           <div class="space-y-3 pt-2">
             <div class="flex items-center justify-between text-xs text-slate-400">
               <span id="audioTrackStatus"><i class="fa-solid fa-volume-high text-gold-400 mr-1"></i> Música Sincronizada</span>
@@ -428,7 +445,7 @@
             <div class="flex items-center justify-between p-3 bg-noir-900/80 rounded-xl border border-gold-500/20">
               <div class="text-xs">
                 <span class="font-semibold text-slate-200 block">Campanadas Festivas Pro</span>
-                <span class="text-slate-400 text-[11px]">Sonido sintético elegante si no tienes audio a mano</span>
+                <span class="text-slate-400 text-[11px]">Sonido sintético elegante de gala con Web Audio API</span>
               </div>
               <button id="toggleSynthBtn" class="px-3 py-1.5 rounded-lg bg-noir-700 hover:bg-gold-500 hover:text-black text-xs font-semibold border border-slate-600 transition">
                 Tocar Acorde
@@ -438,12 +455,12 @@
         </div>
 
         <div class="p-4 bg-gold-500/10 border border-gold-500/30 rounded-2xl">
-          <h5 class="text-xs font-bold text-gold-300 font-cinzel mb-1"><i class="fa-solid fa-lightbulb mr-1"></i> Sugerencias de música para 57 años:</h5>
+          <h5 class="text-xs font-bold text-gold-300 font-cinzel mb-1"><i class="fa-solid fa-lightbulb mr-1"></i> Sugerencias de canciones para sus 57 años:</h5>
           <ul class="text-[11px] text-slate-300 list-disc pl-4 space-y-1">
             <li>"My Way" (A mi manera) – Frank Sinatra</li>
             <li>"Celebration" – Kool & The Gang</li>
-            <li>Balada instrumental de guitarra acústica o saxofón sofisticado</li>
-            <li>Salsa clásica o Bolero emblemático de su juventud</li>
+            <li>Balada instrumental de saxofón clásico o piano de gala</li>
+            <li>Bolero clásico o canción representativa de su juventud</li>
           </ul>
         </div>
 
@@ -498,20 +515,20 @@
           </div>
         </div>
 
-        <!-- Export & Share Instructions Card -->
+        <!-- Export & GitHub Instructions Card -->
         <div class="bg-noir-800/80 border border-slate-700 rounded-2xl p-4 text-xs text-slate-300 space-y-2">
           <div class="font-bold font-cinzel text-gold-400 flex items-center gap-1.5">
-            <i class="fa-solid fa-video"></i> ¿Cómo proyectar o grabar este video?
+            <i class="fa-solid fa-video"></i> ¿Cómo proyectar o subir a GitHub?
           </div>
           <p class="leading-relaxed">
-            1. Ajusta tus fotos y textos en orden cronológico o emotivo.<br>
-            2. Carga tu canción en la pestaña <strong>Audio</strong>.<br>
-            3. Haz clic en <strong>"Exportar MP4 (1080p)"</strong> para generar automáticamente el video en alta definición listo para redes o proyectores.<br>
-            4. Sube <code>index.html</code>, <code>manifest.json</code>, <code>sw.js</code> e <code>icon.svg</code> a tu repositorio de GitHub para tener la PWA instalable en cualquier celular vía GitHub Pages.
+            1. Ajusta tus fotos, textos y frases para cada momento de sus 57 años.<br>
+            2. Carga la música de fondo en la pestaña <strong>Banda Sonora</strong>.<br>
+            3. Haz clic en <strong>"Exportar MP4 (1080p)"</strong> para generar el video vertical en Full HD.<br>
+            4. Descarga el paquete de archivos PWA con el botón <strong>"Archivos GitHub"</strong> para publicarlo gratis en GitHub Pages e instalarlo en cualquier teléfono.
           </p>
 
           <div class="pt-2 border-t border-slate-700/60 flex items-center justify-between">
-            <span class="text-[11px] text-slate-400">Descarga los 3 archivos para tu repo:</span>
+            <span class="text-[11px] text-slate-400">Descarga manifest, sw e icon:</span>
             <button id="quickDownloadPwaBtn" class="px-2.5 py-1 rounded-lg bg-gold-500/10 hover:bg-gold-500/20 text-gold-300 border border-gold-500/30 text-[11px] font-semibold transition flex items-center gap-1">
               <i class="fa-solid fa-file-arrow-down"></i> Descargar PWA Pack
             </button>
@@ -614,12 +631,10 @@
     const pwaInstallBtn = document.getElementById('pwaInstallBtn');
 
     function setupPWA() {
-      // Register Service Worker directly for GitHub Pages or fallback to dynamic blob
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('./sw.js')
           .then(() => console.log('Service Worker de GitHub registrado correctamente.'))
           .catch(() => {
-            // Fallback for sandboxed or file:// preview environments
             const swScript = `
               const CACHE_NAME = 'tributo-57-fallback-cache';
               self.addEventListener('install', e => self.skipWaiting());
@@ -633,7 +648,6 @@
           });
       }
 
-      // Listen for beforeinstallprompt
       window.addEventListener('beforeinstallprompt', (e) => {
         e.preventDefault();
         deferredInstallPrompt = e;
@@ -650,12 +664,11 @@
           deferredInstallPrompt = null;
           pwaInstallBtn.classList.add('hidden');
         } else {
-          showToast('Instalación en Móvil', 'En iOS toca "Compartir" -> "Agregar a pantalla de inicio". En Android toca los 3 puntos -> "Instalar app".', 'info');
+          showToast('Instalación en Móvil', 'En iOS toca "Compartir" -> "Agregar a inicio". En Android toca los 3 puntos -> "Instalar app".', 'info');
         }
       });
     }
 
-    // Helper to download individual text/data files for GitHub
     function downloadFile(filename, content, mimeType) {
       const blob = new Blob([content], { type: mimeType });
       const url = URL.createObjectURL(blob);
@@ -670,12 +683,11 @@
       }, 500);
     }
 
-    // Direct export of manifest.json, sw.js and icon.svg for GitHub repository
     function setupGitHubFilesExporter() {
       const manifestData = `{
   "name": "Tributo 57 Años",
   "short_name": "Tributo 57",
-  "description": "Plantilla de video 9:16 con transiciones Ken Burns, música y efectos para celebrar 57 años.",
+  "description": "Plantilla de video 9:16 con transiciones Ken Burns, copas de vino con brindis animado, música y exportación 1080p para celebrar 57 años.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
@@ -700,7 +712,7 @@
   ]
 }`;
 
-      const swData = `const CACHE_NAME = 'tributo-57-v1.2.0';
+      const swData = `const CACHE_NAME = 'tributo-57-v1.3.0';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -788,7 +800,6 @@ self.addEventListener('fetch', (e) => {
       if (btn2) btn2.addEventListener('click', downloadAllPwaFiles);
     }
 
-    // Helper Toast (instead of alert)
     function showToast(title, message, type = 'info') {
       const toast = document.getElementById('toastBox');
       const tTitle = document.getElementById('toastTitle');
@@ -815,12 +826,11 @@ self.addEventListener('fetch', (e) => {
       }, 4000);
     }
 
-    // Initial celebration slide dataset
     const DEFAULT_SLIDES = [
       {
         id: 1,
         url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop',
-        quote: '', // Former quote removed, wine clinking celebration active
+        quote: '',
         isWineToast: true,
         transition: 'kenburns-1'
       },
@@ -840,22 +850,18 @@ self.addEventListener('fetch', (e) => {
       }
     ];
 
-    // State Variables
     let slides = [...DEFAULT_SLIDES];
     let currentIndex = 0;
     let isPlaying = false;
     let slideTimer = null;
     let progressTimer = null;
-    let slideDuration = 4000; // ms
-    let progressStep = 50; // ms
+    let slideDuration = 4000;
+    let progressStep = 50;
     let currentProgress = 0;
     let particlesEnabled = true;
-
-    // Audio & Web Audio API Context
     let audioCtx = null;
-    const bgAudio = document.getElementById('bgAudio');
 
-    // DOM Elements
+    const bgAudio = document.getElementById('bgAudio');
     const slideViewport = document.getElementById('slideViewport');
     const overlayTitle = document.getElementById('overlayTitle');
     const overlayName = document.getElementById('overlayName');
@@ -870,6 +876,8 @@ self.addEventListener('fetch', (e) => {
     const nextSlideBtn = document.getElementById('nextSlideBtn');
     const slidesListContainer = document.getElementById('slidesListContainer');
     const photoCountEl = document.getElementById('photoCount');
+    const viewportSlideIndex = document.getElementById('viewportSlideIndex');
+    const viewportTotalSlides = document.getElementById('viewportTotalSlides');
     const fileInput = document.getElementById('fileInput');
     const dropZone = document.getElementById('dropZone');
     const addPresetPhotosBtn = document.getElementById('addPresetPhotosBtn');
@@ -933,16 +941,19 @@ self.addEventListener('fetch', (e) => {
             <p class="text-xs text-slate-400 mt-1">Sube tus fotos para comenzar la presentación.</p>
           </div>
         `;
+        viewportSlideIndex.textContent = '0';
+        viewportTotalSlides.textContent = '0';
         return;
       }
 
+      viewportSlideIndex.textContent = currentIndex + 1;
+      viewportTotalSlides.textContent = slides.length;
+
       slides.forEach((slide, index) => {
-        // Slide layer
         const slideEl = document.createElement('div');
         slideEl.className = `absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${index === currentIndex ? 'opacity-100 z-1' : 'opacity-0 z-0 pointer-events-none'}`;
         slideEl.id = `slide-layer-${index}`;
 
-        // Ken burns transition style calculation
         let animClass = slide.transition || 'kenburns-1';
         if (kenBurnsSelect.value !== 'dynamic') {
           animClass = 'kenburns-' + (kenBurnsSelect.value === 'zoom-in' ? '1' : kenBurnsSelect.value === 'pan-right' ? '2' : '3');
@@ -955,13 +966,10 @@ self.addEventListener('fetch', (e) => {
         `;
         slideViewport.appendChild(slideEl);
 
-        // Dot Indicator
         const dot = document.createElement('button');
         dot.className = `w-2 h-2 rounded-full transition-all duration-300 ${index === currentIndex ? 'w-6 bg-gold-400' : 'bg-white/40 hover:bg-white/70'}`;
         dot.title = `Ir a foto ${index + 1}`;
-        dot.addEventListener('click', () => {
-          goToSlide(index);
-        });
+        dot.addEventListener('click', () => goToSlide(index));
         paginationDots.appendChild(dot);
       });
 
@@ -973,10 +981,10 @@ self.addEventListener('fetch', (e) => {
 
       const currentSlide = slides[currentIndex];
       
-      overlayTitle.textContent = inputMainTitle.value;
-      overlayName.textContent = inputHonoreeName.value;
+      overlayTitle.textContent = inputMainTitle.value || '¡FELICES 57 AÑOS!';
+      overlayName.textContent = inputHonoreeName.value || 'Don Fernando Ruiz';
+      viewportSlideIndex.textContent = currentIndex + 1;
 
-      // If current slide is wine toast or has no text, show clinking wine glasses with celebratory movement
       if (currentSlide.isWineToast || !currentSlide.quote || currentSlide.quote.trim() === '') {
         overlayCaption.classList.add('hidden');
         clinkingWineGlassesContainer.classList.remove('hidden');
@@ -994,7 +1002,6 @@ self.addEventListener('fetch', (e) => {
         }, 200);
       }
 
-      // Update Pagination Dots
       const dots = paginationDots.children;
       for (let i = 0; i < dots.length; i++) {
         if (i === currentIndex) {
@@ -1008,7 +1015,6 @@ self.addEventListener('fetch', (e) => {
     function goToSlide(newIndex) {
       if (slides.length === 0) return;
 
-      // Reset layer styling of current
       const oldLayer = document.getElementById(`slide-layer-${currentIndex}`);
       if (oldLayer) {
         oldLayer.classList.remove('opacity-100', 'z-1');
@@ -1021,7 +1027,6 @@ self.addEventListener('fetch', (e) => {
 
       currentIndex = (newIndex + slides.length) % slides.length;
 
-      // Activate new layer
       const nextLayer = document.getElementById(`slide-layer-${currentIndex}`);
       if (nextLayer) {
         nextLayer.classList.remove('opacity-0', 'z-0');
@@ -1033,7 +1038,6 @@ self.addEventListener('fetch', (e) => {
           if (kenBurnsSelect.value !== 'dynamic') {
             animClass = 'kenburns-' + (kenBurnsSelect.value === 'zoom-in' ? '1' : kenBurnsSelect.value === 'pan-right' ? '2' : '3');
           }
-          // Restart animation trigger
           nextImg.classList.remove('kenburns-1', 'kenburns-2', 'kenburns-3');
           void nextImg.offsetWidth;
           nextImg.classList.add(animClass);
@@ -1045,13 +1049,8 @@ self.addEventListener('fetch', (e) => {
       updateCaptionDisplay();
     }
 
-    function nextSlide() {
-      goToSlide(currentIndex + 1);
-    }
-
-    function prevSlide() {
-      goToSlide(currentIndex - 1);
-    }
+    function nextSlide() { goToSlide(currentIndex + 1); }
+    function prevSlide() { goToSlide(currentIndex - 1); }
 
     function startPlayback() {
       if (slides.length === 0) return;
@@ -1059,9 +1058,8 @@ self.addEventListener('fetch', (e) => {
       playPauseIcon.className = 'fa-solid fa-pause';
       playPauseText.textContent = 'Pausar';
 
-      // Start music if ready
       if (bgAudio.src && bgAudio.paused) {
-        bgAudio.play().catch(e => console.log('Audio autoplay prevented:', e));
+        bgAudio.play().catch(e => console.log('Audio autoplay:', e));
       }
 
       clearInterval(slideTimer);
@@ -1092,11 +1090,8 @@ self.addEventListener('fetch', (e) => {
     }
 
     playPauseBtn.addEventListener('click', () => {
-      if (isPlaying) {
-        pausePlayback();
-      } else {
-        startPlayback();
-      }
+      if (isPlaying) pausePlayback();
+      else startPlayback();
     });
 
     prevSlideBtn.addEventListener('click', () => {
@@ -1112,6 +1107,7 @@ self.addEventListener('fetch', (e) => {
     function renderPhotoList() {
       slidesListContainer.innerHTML = '';
       photoCountEl.textContent = slides.length;
+      viewportTotalSlides.textContent = slides.length;
 
       slides.forEach((slide, idx) => {
         const item = document.createElement('div');
@@ -1130,7 +1126,7 @@ self.addEventListener('fetch', (e) => {
                 <i class="fa-solid fa-wine-glass text-xs mr-1"></i>${isToastActive ? 'Copas Activas' : 'Poner Copas'}
               </button>
             </div>
-            <input type="text" data-index="${idx}" value="${slide.quote || ''}" placeholder="${isToastActive ? 'Copas de vino chocando con brindis activo' : 'Escribe una frase...'}" class="slide-quote-input w-full bg-noir-900 border border-slate-700 rounded-lg px-2.5 py-1 text-xs text-slate-200 focus:outline-none focus:border-gold-500 transition mt-0.5">
+            <input type="text" data-index="${idx}" value="${slide.quote || ''}" placeholder="${isToastActive ? 'Copas de vino chocando con brindis activo' : 'Escribe una frase emotiva...'}" class="slide-quote-input w-full bg-noir-900 border border-slate-700 rounded-lg px-2.5 py-1 text-xs text-slate-200 focus:outline-none focus:border-gold-500 transition mt-0.5">
           </div>
 
           <div class="flex flex-col gap-1 items-center justify-center">
@@ -1145,9 +1141,8 @@ self.addEventListener('fetch', (e) => {
         slidesListContainer.appendChild(item);
       });
 
-      // Bind toggle toast glasses button
       document.querySelectorAll('.btn-toggle-toast').forEach(btn => {
-        btn.addEventListener('click', (e) => {
+        btn.addEventListener('click', () => {
           const index = parseInt(btn.getAttribute('data-index'), 10);
           slides[index].isWineToast = !slides[index].isWineToast;
           if (slides[index].isWineToast) {
@@ -1160,7 +1155,6 @@ self.addEventListener('fetch', (e) => {
         });
       });
 
-      // Bind input events for live quote updating
       document.querySelectorAll('.slide-quote-input').forEach(input => {
         input.addEventListener('input', (e) => {
           const index = parseInt(e.target.getAttribute('data-index'), 10);
@@ -1172,16 +1166,15 @@ self.addEventListener('fetch', (e) => {
         });
       });
 
-      // Bind slide action events
       document.querySelectorAll('.btn-delete-slide').forEach(btn => {
-        btn.addEventListener('click', (e) => {
+        btn.addEventListener('click', () => {
           const index = parseInt(btn.getAttribute('data-index'), 10);
           deleteSlide(index);
         });
       });
 
       document.querySelectorAll('.btn-focus-slide').forEach(btn => {
-        btn.addEventListener('click', (e) => {
+        btn.addEventListener('click', () => {
           const index = parseInt(btn.getAttribute('data-index'), 10);
           goToSlide(index);
         });
@@ -1190,7 +1183,6 @@ self.addEventListener('fetch', (e) => {
 
     function deleteSlide(index) {
       if (slides.length <= 1) {
-        // Keep at least 1 placeholder with clinking wine glasses celebration
         slides = [{
           id: Date.now(),
           url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop',
@@ -1210,7 +1202,6 @@ self.addEventListener('fetch', (e) => {
 
     function handleFiles(files) {
       if (!files || files.length === 0) return;
-
       const transitions = ['kenburns-1', 'kenburns-2', 'kenburns-3'];
 
       Array.from(files).forEach((file, idx) => {
@@ -1233,10 +1224,7 @@ self.addEventListener('fetch', (e) => {
       });
     }
 
-    fileInput.addEventListener('change', (e) => {
-      handleFiles(e.target.files);
-    });
-
+    fileInput.addEventListener('change', (e) => handleFiles(e.target.files));
     dropZone.addEventListener('click', () => fileInput.click());
 
     ['dragenter', 'dragover'].forEach(eventName => {
@@ -1264,10 +1252,11 @@ self.addEventListener('fetch', (e) => {
       currentIndex = 0;
       renderPhotoList();
       renderSlideLayers();
+      showToast('Fotos restauradas', 'Se cargó la secuencia de fotos de muestra.', 'success');
     });
 
     inputHonoreeName.addEventListener('input', () => {
-      overlayName.textContent = inputHonoreeName.value || 'Homenajeado';
+      overlayName.textContent = inputHonoreeName.value || 'Don Fernando Ruiz';
     });
 
     inputMainTitle.addEventListener('input', () => {
@@ -1277,14 +1266,10 @@ self.addEventListener('fetch', (e) => {
     slideDurationSelect.addEventListener('change', () => {
       slideDuration = parseInt(slideDurationSelect.value, 10);
       slideTimeIndicator.textContent = `${slideDuration / 1000}s / foto`;
-      if (isPlaying) {
-        startPlayback();
-      }
+      if (isPlaying) startPlayback();
     });
 
-    kenBurnsSelect.addEventListener('change', () => {
-      renderSlideLayers();
-    });
+    kenBurnsSelect.addEventListener('change', () => renderSlideLayers());
 
     particlesToggle.addEventListener('change', () => {
       particlesEnabled = particlesToggle.checked;
@@ -1305,6 +1290,7 @@ self.addEventListener('fetch', (e) => {
         if (isPlaying) {
           bgAudio.play();
         }
+        showToast('Música Cargada', `Pista "${file.name}" lista para la celebración.`, 'success');
       }
     });
 
@@ -1312,7 +1298,13 @@ self.addEventListener('fetch', (e) => {
       bgAudio.volume = parseFloat(volumeSlider.value);
     });
 
-    // Elegant Celebratory Web Audio Chime Synth
+    bgAudio.addEventListener('timeupdate', () => {
+      const curr = Math.floor(bgAudio.currentTime);
+      const total = Math.floor(bgAudio.duration) || 0;
+      const formatTime = s => `${Math.floor(s / 60)}:${(s % 60).toString().padStart(2, '0')}`;
+      document.getElementById('audioTiming').textContent = `${formatTime(curr)} / ${formatTime(total)}`;
+    });
+
     function playCelebratoryChime() {
       try {
         const AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -1323,7 +1315,7 @@ self.addEventListener('fetch', (e) => {
           audioCtx.resume();
         }
 
-        const chords = [523.25, 659.25, 783.99, 1046.50]; // C Major luxury arpeggio
+        const chords = [523.25, 659.25, 783.99, 1046.50];
         chords.forEach((freq, i) => {
           const osc = audioCtx.createOscillator();
           const gain = audioCtx.createGain();
@@ -1345,9 +1337,7 @@ self.addEventListener('fetch', (e) => {
       }
     }
 
-    toggleSynthBtn.addEventListener('click', () => {
-      playCelebratoryChime();
-    });
+    toggleSynthBtn.addEventListener('click', playCelebratoryChime);
 
     const canvas = document.getElementById('sparklesCanvas');
     const ctx = canvas.getContext('2d');
@@ -1363,9 +1353,7 @@ self.addEventListener('fetch', (e) => {
     window.addEventListener('resize', resizeCanvas);
 
     class Particle {
-      constructor() {
-        this.reset();
-      }
+      constructor() { this.reset(); }
 
       reset() {
         this.x = Math.random() * (canvas.width || 360);
@@ -1375,17 +1363,14 @@ self.addEventListener('fetch', (e) => {
         this.speedX = (Math.random() - 0.5) * 0.5;
         this.opacity = Math.random() * 0.7 + 0.2;
         this.fade = Math.random() * 0.005 + 0.002;
-        this.hue = Math.random() > 0.3 ? 46 : 38; // Gold to warm amber
+        this.hue = Math.random() > 0.3 ? 46 : 38;
       }
 
       update() {
         this.y += this.speedY;
         this.x += this.speedX;
         this.opacity -= this.fade;
-
-        if (this.opacity <= 0 || this.y < -10) {
-          this.reset();
-        }
+        if (this.opacity <= 0 || this.y < -10) this.reset();
       }
 
       draw() {
@@ -1422,8 +1407,6 @@ self.addEventListener('fetch', (e) => {
 
     function triggerConfettiBurst() {
       playCelebratoryChime();
-
-      // Spawn festive gold and champagne sparkles
       for (let i = 0; i < 40; i++) {
         const p = new Particle();
         p.x = canvas.width / 2;
@@ -1438,13 +1421,10 @@ self.addEventListener('fetch', (e) => {
         particles.push(p);
       }
 
-      // Visual pulse on the 9:16 frame
       const frameEl = document.querySelector('.aspect-9-16');
       if (frameEl) {
         frameEl.classList.add('gold-glow-intense');
-        setTimeout(() => {
-          frameEl.classList.remove('gold-glow-intense');
-        }, 1200);
+        setTimeout(() => frameEl.classList.remove('gold-glow-intense'), 1200);
       }
     }
 
@@ -1452,31 +1432,14 @@ self.addEventListener('fetch', (e) => {
 
     toggleFullscreenBtn.addEventListener('click', () => {
       if (!document.fullscreenElement) {
-        if (videoContainer.requestFullscreen) {
-          videoContainer.requestFullscreen();
-        } else if (videoContainer.webkitRequestFullscreen) {
-          videoContainer.webkitRequestFullscreen();
-        }
+        if (videoContainer.requestFullscreen) videoContainer.requestFullscreen();
+        else if (videoContainer.webkitRequestFullscreen) videoContainer.webkitRequestFullscreen();
       } else {
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
-        }
+        if (document.exitFullscreen) document.exitFullscreen();
       }
     });
 
-    document.addEventListener('fullscreenchange', () => {
-      setTimeout(resizeCanvas, 150);
-    });
-
-    window.addEventListener('load', () => {
-      initParticles();
-      animateParticles();
-      renderPhotoList();
-      renderSlideLayers();
-      setupPWA();
-      setupGitHubFilesExporter();
-      setupVideoExporter();
-    });
+    document.addEventListener('fullscreenchange', () => setTimeout(resizeCanvas, 150));
 
     /* ==========================================================================
        2. FULL HD (1080x1920) MP4 VIDEO EXPORT ENGINE
@@ -1504,7 +1467,7 @@ self.addEventListener('fetch', (e) => {
 
       function updateExportModalInfo() {
         const totalDurationSec = Math.round((slides.length * slideDuration) / 1000);
-        exportEstimatedDuration.textContent = `${totalDurationSec} segundos (${slides.length} diapositivas)`;
+        exportEstimatedDuration.textContent = `${totalDurationSec} segundos (${slides.length} fotos)`;
         
         if (bgAudio.src && !bgAudio.src.startsWith('blob:null')) {
           audioInExportStatus.textContent = 'Música del Usuario Sincronizada';
@@ -1527,24 +1490,18 @@ self.addEventListener('fetch', (e) => {
       });
 
       closeExportModalBtn.addEventListener('click', () => {
-        if (isExporting) {
-          stopExportRequested = true;
-        }
+        if (isExporting) stopExportRequested = true;
         exportModal.classList.add('hidden');
       });
 
-      exportDoneBtn.addEventListener('click', () => {
-        exportModal.classList.add('hidden');
-      });
+      exportDoneBtn.addEventListener('click', () => exportModal.classList.add('hidden'));
 
-      // Helper to preload an image to HTMLImageElement
       function loadImage(url) {
         return new Promise((resolve, reject) => {
           const img = new Image();
           img.crossOrigin = 'anonymous';
           img.onload = () => resolve(img);
           img.onerror = () => {
-            // Fallback placeholder image on fail
             const fallback = new Image();
             fallback.onload = () => resolve(fallback);
             fallback.onerror = reject;
@@ -1565,19 +1522,16 @@ self.addEventListener('fetch', (e) => {
         exportActions.classList.add('hidden');
         exportRenderStatus.classList.remove('hidden');
         exportCompletedNotice.classList.add('hidden');
-        exportStatusText.textContent = 'Cargando imágenes de alta resolución...';
+        exportStatusText.textContent = 'Cargando imágenes en alta resolución...';
 
         try {
-          // Preload all slide images
           const loadedImages = await Promise.all(slides.map(s => loadImage(s.url)));
 
-          // Canvas setup 1080 x 1920
           const W = 1080;
           const H = 1920;
           renderCanvas.width = W;
           renderCanvas.height = H;
 
-          // Set up Audio Context and Destination for recording
           const AudioContext = window.AudioContext || window.webkitAudioContext;
           let renderAudioCtx = null;
           let audioDest = null;
@@ -1589,7 +1543,6 @@ self.addEventListener('fetch', (e) => {
 
             if (bgAudio.src) {
               try {
-                // Fetch and decode audio for smooth recording
                 const resp = await fetch(bgAudio.src);
                 const arrayBuf = await resp.arrayBuffer();
                 const audioBuffer = await renderAudioCtx.decodeAudioData(arrayBuf);
@@ -1598,10 +1551,9 @@ self.addEventListener('fetch', (e) => {
                 audioSourceNode.connect(audioDest);
                 audioSourceNode.start(0);
               } catch (audioErr) {
-                console.warn('No se pudo decodificar audio para export: ', audioErr);
+                console.warn('Audio export fallback:', audioErr);
               }
             } else {
-              // Generate celebratory background chimes if no audio was uploaded
               const osc = renderAudioCtx.createOscillator();
               const gain = renderAudioCtx.createGain();
               osc.type = 'triangle';
@@ -1613,8 +1565,7 @@ self.addEventListener('fetch', (e) => {
             }
           }
 
-          // Video Stream Setup
-          const videoStream = renderCanvas.captureStream(30); // 30 FPS Full HD
+          const videoStream = renderCanvas.captureStream(30);
           const combinedStream = new MediaStream();
 
           videoStream.getVideoTracks().forEach(track => combinedStream.addTrack(track));
@@ -1622,28 +1573,19 @@ self.addEventListener('fetch', (e) => {
             audioDest.stream.getAudioTracks().forEach(track => combinedStream.addTrack(track));
           }
 
-          // Choose best available container/codec
           let mimeType = 'video/mp4';
-          if (!MediaRecorder.isTypeSupported(mimeType)) {
-            mimeType = 'video/mp4;codecs=avc1';
-          }
-          if (!MediaRecorder.isTypeSupported(mimeType)) {
-            mimeType = 'video/webm;codecs=vp9';
-          }
-          if (!MediaRecorder.isTypeSupported(mimeType)) {
-            mimeType = 'video/webm';
-          }
+          if (!MediaRecorder.isTypeSupported(mimeType)) mimeType = 'video/mp4;codecs=avc1';
+          if (!MediaRecorder.isTypeSupported(mimeType)) mimeType = 'video/webm;codecs=vp9';
+          if (!MediaRecorder.isTypeSupported(mimeType)) mimeType = 'video/webm';
 
           const recorder = new MediaRecorder(combinedStream, {
             mimeType: mimeType,
-            videoBitsPerSecond: 8000000 // 8 Mbps for sharp 1080p
+            videoBitsPerSecond: 8000000
           });
 
           const recordedChunks = [];
           recorder.ondataavailable = (e) => {
-            if (e.data && e.data.size > 0) {
-              recordedChunks.push(e.data);
-            }
+            if (e.data && e.data.size > 0) recordedChunks.push(e.data);
           };
 
           recorder.onstop = () => {
@@ -1653,7 +1595,6 @@ self.addEventListener('fetch', (e) => {
             a.style.display = 'none';
             a.href = downloadUrl;
             
-            // Format file name
             const cleanName = (inputHonoreeName.value || 'Caballero').trim().replace(/[^a-zA-Z0-9_-]/g, '_');
             const ext = mimeType.includes('mp4') ? 'mp4' : 'webm';
             a.download = `Cumpleanos_57_${cleanName}_1080x1920.${ext}`;
@@ -1668,12 +1609,11 @@ self.addEventListener('fetch', (e) => {
             exportRenderStatus.classList.add('hidden');
             exportCompletedNotice.classList.remove('hidden');
             isExporting = false;
-            showToast('¡Descarga Completa!', 'Tu video 1080x1920 se ha guardado.', 'success');
+            showToast('¡Descarga Completa!', 'Tu video 1080x1920 se ha generado con éxito.', 'success');
           };
 
           recorder.start();
 
-          // Simulation particles for 1080p render
           const renderParticles = [];
           for (let p = 0; p < 70; p++) {
             renderParticles.push({
@@ -1702,27 +1642,22 @@ self.addEventListener('fetch', (e) => {
 
             const slideIdx = Math.min(totalSlides - 1, Math.floor(currentFrame / framesPerSlide));
             const frameInSlide = currentFrame % framesPerSlide;
-            const progressInSlide = frameInSlide / framesPerSlide; // 0 to 1
+            const progressInSlide = frameInSlide / framesPerSlide;
 
             const img = loadedImages[slideIdx];
             const slideData = slides[slideIdx];
 
-            // 1. Draw Image with Ken Burns transformation
             rCtx.save();
             rCtx.fillStyle = '#0a0c10';
             rCtx.fillRect(0, 0, W, H);
 
-            // Compute scaling and panning
             let scale = 1.0 + (progressInSlide * 0.12);
             let panX = (progressInSlide - 0.5) * 30;
             let panY = (progressInSlide - 0.5) * 40;
 
             const mode = kenBurnsSelect.value;
-            if (mode === 'pan-right') {
-              panX = -(progressInSlide - 0.5) * 60;
-            } else if (mode === 'zoom-out') {
-              scale = 1.15 - (progressInSlide * 0.12);
-            }
+            if (mode === 'pan-right') panX = -(progressInSlide - 0.5) * 60;
+            else if (mode === 'zoom-out') scale = 1.15 - (progressInSlide * 0.12);
 
             const imgRatio = img.width / img.height;
             const targetRatio = W / H;
@@ -1742,7 +1677,7 @@ self.addEventListener('fetch', (e) => {
             rCtx.drawImage(img, offsetX, offsetY, drawW, drawH);
             rCtx.restore();
 
-            // 2. Cinematic Vignette and Gold Gradients
+            // Gradients and Vignette
             const gradTop = rCtx.createLinearGradient(0, 0, 0, 350);
             gradTop.addColorStop(0, 'rgba(0, 0, 0, 0.7)');
             gradTop.addColorStop(1, 'rgba(0, 0, 0, 0)');
@@ -1756,7 +1691,7 @@ self.addEventListener('fetch', (e) => {
             rCtx.fillStyle = gradBottom;
             rCtx.fillRect(0, H - 750, 0, 750);
 
-            // 3. Floating Gold Particles
+            // Particles
             rCtx.save();
             renderParticles.forEach(p => {
               p.y += p.speedY;
@@ -1770,7 +1705,7 @@ self.addEventListener('fetch', (e) => {
             });
             rCtx.restore();
 
-            // 4. Bottom Golden Laurels / Crown Icon
+            // Crown
             rCtx.save();
             rCtx.textAlign = 'center';
             rCtx.fillStyle = '#d4af37';
@@ -1779,7 +1714,7 @@ self.addEventListener('fetch', (e) => {
             rCtx.shadowBlur = 15;
             rCtx.fillText('👑', W / 2, H - 420);
 
-            // 5. Main Titles & Captions
+            // Titles
             rCtx.font = '900 58px "Cinzel", serif';
             const titleGrad = rCtx.createLinearGradient(W/2 - 300, 0, W/2 + 300, 0);
             titleGrad.addColorStop(0, '#FFF4D0');
@@ -1790,19 +1725,17 @@ self.addEventListener('fetch', (e) => {
             rCtx.shadowBlur = 18;
             rCtx.fillText(inputMainTitle.value || '¡FELICES 57 AÑOS!', W / 2, H - 340);
 
-            // Honoree Name
             rCtx.font = 'italic 700 42px "Playfair Display", serif';
             rCtx.fillStyle = '#ffffff';
             rCtx.shadowColor = '#000000';
             rCtx.shadowBlur = 12;
-            rCtx.fillText(inputHonoreeName.value || 'Un Gran Caballero', W / 2, H - 280);
+            rCtx.fillText(inputHonoreeName.value || 'Don Fernando Ruiz', W / 2, H - 280);
 
             const isWineSlide = slideData.isWineToast || !slideData.quote || slideData.quote.trim() === '';
 
             if (isWineSlide) {
-              // Draw 2 Clinking Wine Glasses on 1080p Canvas with movement oscillation
               rCtx.save();
-              const clinkPhase = (currentFrame % 75) / 75; // Clinking cycle every ~2.5s
+              const clinkPhase = (currentFrame % 75) / 75;
               let tiltLeft = 0;
               let tiltRight = 0;
               let sparkleScale = 0;
@@ -1818,24 +1751,21 @@ self.addEventListener('fetch', (e) => {
 
               const centerY = H - 200;
 
-              // Draw Left Glass
+              // Left Glass
               rCtx.save();
               rCtx.translate(W / 2 - 38, centerY + 20);
               rCtx.rotate(tiltLeft);
               rCtx.strokeStyle = '#d4af37';
               rCtx.lineWidth = 4;
-              // Bowl
               rCtx.beginPath();
               rCtx.moveTo(-22, -45);
               rCtx.bezierCurveTo(-22, 0, 22, 0, 22, -45);
               rCtx.stroke();
-              // Wine liquid
               rCtx.fillStyle = '#b31237';
               rCtx.beginPath();
               rCtx.moveTo(-18, -25);
               rCtx.bezierCurveTo(-18, -4, 18, -4, 18, -25);
               rCtx.fill();
-              // Stem & base
               rCtx.beginPath();
               rCtx.moveTo(0, 0);
               rCtx.lineTo(0, 36);
@@ -1846,24 +1776,21 @@ self.addEventListener('fetch', (e) => {
               rCtx.fill();
               rCtx.restore();
 
-              // Draw Right Glass
+              // Right Glass
               rCtx.save();
               rCtx.translate(W / 2 + 38, centerY + 20);
               rCtx.rotate(tiltRight);
               rCtx.strokeStyle = '#d4af37';
               rCtx.lineWidth = 4;
-              // Bowl
               rCtx.beginPath();
               rCtx.moveTo(-22, -45);
               rCtx.bezierCurveTo(-22, 0, 22, 0, 22, -45);
               rCtx.stroke();
-              // Wine liquid
               rCtx.fillStyle = '#b31237';
               rCtx.beginPath();
               rCtx.moveTo(-18, -25);
               rCtx.bezierCurveTo(-18, -4, 18, -4, 18, -25);
               rCtx.fill();
-              // Stem & base
               rCtx.beginPath();
               rCtx.moveTo(0, 0);
               rCtx.lineTo(0, 36);
@@ -1874,7 +1801,7 @@ self.addEventListener('fetch', (e) => {
               rCtx.fill();
               rCtx.restore();
 
-              // Center Clink Sparkle Flare
+              // Sparkle
               if (sparkleScale > 0) {
                 rCtx.save();
                 rCtx.translate(W / 2, centerY - 8);
@@ -1888,23 +1815,20 @@ self.addEventListener('fetch', (e) => {
                 rCtx.restore();
               }
 
-              // Toast Label
               rCtx.font = '700 24px "Cinzel", serif';
               rCtx.fillStyle = '#f7dc6f';
               rCtx.shadowColor = '#000000';
               rCtx.shadowBlur = 10;
               rCtx.fillText('¡SALUD Y BRINDIS DE HONOR!', W / 2, H - 120);
-
               rCtx.restore();
             } else {
-              // Slide Quote with text wrap
               rCtx.font = '300 26px "Montserrat", sans-serif';
               rCtx.fillStyle = '#e2e8f0';
               rCtx.shadowBlur = 8;
               wrapText(rCtx, slideData.quote, W / 2, H - 200, W - 220, 36);
             }
 
-            // Golden Progress Bar at Bottom
+            // Progress bar in 1080p canvas
             const barW = W - 200;
             const barH = 8;
             const barX = 100;
@@ -1917,7 +1841,6 @@ self.addEventListener('fetch', (e) => {
             rCtx.fillRect(barX, barY, barW * totalProg, barH);
             rCtx.restore();
 
-            // Update modal progress bar
             currentFrame++;
             const pct = Math.round((currentFrame / totalFrames) * 100);
             exportProgressBar.style.width = `${pct}%`;
@@ -1935,7 +1858,6 @@ self.addEventListener('fetch', (e) => {
             }
           }
 
-          // Text wrap helper for 1080p canvas
           function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
             const words = text.split(' ');
             let line = '';
@@ -1959,7 +1881,6 @@ self.addEventListener('fetch', (e) => {
             }
           }
 
-          // Start render loop
           requestAnimationFrame(drawFrame);
 
         } catch (err) {
@@ -1971,6 +1892,16 @@ self.addEventListener('fetch', (e) => {
         }
       });
     }
+
+    window.addEventListener('load', () => {
+      initParticles();
+      animateParticles();
+      renderPhotoList();
+      renderSlideLayers();
+      setupPWA();
+      setupGitHubFilesExporter();
+      setupVideoExporter();
+    });
   </script>
 </body>
 </html>

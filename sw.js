@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tributo-57-v1.3.0';
+const CACHE_NAME = 'tributo-57-v1.4.0';
 
 const PRECACHE_ASSETS = [
   './',
