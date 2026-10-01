@@ -99,6 +99,54 @@
       animation: goldPulse 3.5s ease-in-out infinite;
     }
 
+    @keyframes clinkGlassLeft {
+      0%, 100% { transform: rotate(0deg) translate(0, 0); }
+      30% { transform: rotate(-22deg) translate(-6px, 2px); }
+      44% { transform: rotate(14deg) translate(8px, -2px); }
+      50% { transform: rotate(10deg) translate(6px, -1px); }
+      60% { transform: rotate(0deg) translate(0, 0); }
+    }
+
+    @keyframes clinkGlassRight {
+      0%, 100% { transform: rotate(0deg) translate(0, 0); }
+      30% { transform: rotate(22deg) translate(6px, 2px); }
+      44% { transform: rotate(-14deg) translate(-8px, -2px); }
+      50% { transform: rotate(-10deg) translate(-6px, -1px); }
+      60% { transform: rotate(0deg) translate(0, 0); }
+    }
+
+    @keyframes toastSparklePop {
+      0%, 40% { opacity: 0; transform: scale(0) rotate(0deg); }
+      44% { opacity: 1; transform: scale(1.6) rotate(45deg); filter: drop-shadow(0 0 10px #ffe57f); }
+      65% { opacity: 0.9; transform: scale(1.1) rotate(90deg); }
+      85%, 100% { opacity: 0; transform: scale(0.2) rotate(160deg); }
+    }
+
+    @keyframes wineLiquidSway {
+      0%, 100% { transform: rotate(0deg); }
+      44% { transform: rotate(-10deg) scaleY(1.08); }
+      60% { transform: rotate(6deg) scaleY(0.95); }
+    }
+
+    .animate-clink-left {
+      transform-origin: 30% 95%;
+      animation: clinkGlassLeft 2.8s cubic-bezier(0.35, 0, 0.25, 1) infinite;
+    }
+
+    .animate-clink-right {
+      transform-origin: 70% 95%;
+      animation: clinkGlassRight 2.8s cubic-bezier(0.35, 0, 0.25, 1) infinite;
+    }
+
+    .animate-toast-sparkle {
+      transform-origin: center center;
+      animation: toastSparklePop 2.8s ease-out infinite;
+    }
+
+    .animate-wine-liquid {
+      animation: wineLiquidSway 2.8s ease-in-out infinite;
+    }
+
     .kenburns-1 {
       animation: kenburns-zoom-in 7s ease-out forwards;
     }
@@ -243,86 +291,86 @@
                 Un Gran Caballero
               </h3>
 
-              <!-- Dynamic Emotional Quote / Subtitle -->
-              <p id="overlayCaption" class="text-xs text-slate-300 font-montserrat font-light leading-relaxed max-w-[280px] drop-shadow-md mt-1 transition-all duration-500">
-                57 años de carácter, sabiduría, metas cumplidas y una trayectoria intachable.
+              <!-- Celebratory Wine Glasses Clinking Animation (In place of former phrase) -->
+              <div id="clinkingWineGlassesContainer" class="my-1.5 flex flex-col items-center justify-center transition-all duration-500">
+                <div class="relative w-28 h-20 flex items-center justify-center">
+                  <!-- Central Toast Sparkle Flare -->
+                  <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
+                    <svg class="w-10 h-10 text-amber-200 animate-toast-sparkle" viewBox="0 0 40 40" fill="currentColor">
+                      <path d="M20 0 L23 15 L38 20 L23 25 L20 40 L17 25 L2 20 L17 15 Z"/>
+                      <circle cx="20" cy="20" r="3" fill="#ffffff"/>
+                    </svg>
+                  </div>
+
+                  <!-- Wine Glasses SVG with celebration clinking movement -->
+                  <svg viewBox="0 0 160 110" class="w-28 h-20 overflow-visible drop-shadow-[0_4px_16px_rgba(212,175,55,0.45)]">
+                    <defs>
+                      <linearGradient id="glassStemGrad" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+                        <stop offset="50%" stop-color="#d4af37" stop-opacity="0.75"/>
+                        <stop offset="100%" stop-color="#805d12" stop-opacity="0.9"/>
+                      </linearGradient>
+                      <linearGradient id="wineGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#ff4757"/>
+                        <stop offset="40%" stop-color="#b31237"/>
+                        <stop offset="100%" stop-color="#58081a"/>
+                      </linearGradient>
+                      <linearGradient id="champagneGoldGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#fff5cc"/>
+                        <stop offset="45%" stop-color="#e6b800"/>
+                        <stop offset="100%" stop-color="#996e00"/>
+                      </linearGradient>
+                    </defs>
+
+                    <!-- Left Glass -->
+                    <g class="animate-clink-left">
+                      <!-- Base -->
+                      <ellipse cx="52" cy="98" rx="19" ry="4" fill="url(#glassStemGrad)" opacity="0.85"/>
+                      <!-- Stem -->
+                      <line x1="52" y1="62" x2="52" y2="98" stroke="url(#glassStemGrad)" stroke-width="3" stroke-linecap="round"/>
+                      <!-- Bowl Contour -->
+                      <path d="M 33 22 C 32 46, 42 63, 52 63 C 62 63, 72 46, 71 22 Z" fill="rgba(255, 255, 255, 0.08)" stroke="url(#glassStemGrad)" stroke-width="2.2"/>
+                      <!-- Wine Inside Bowl -->
+                      <g class="animate-wine-liquid">
+                        <path d="M 36 34 C 36 51, 44 60, 52 60 C 60 60, 68 51, 68 34 C 62 36, 42 32, 36 34 Z" fill="url(#wineGrad)"/>
+                        <!-- Wine Reflection highlight -->
+                        <path d="M 39 36 Q 42 54 48 58" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+                      </g>
+                      <!-- Rim -->
+                      <ellipse cx="52" cy="22" rx="19" ry="3.5" fill="rgba(255,255,255,0.15)" stroke="url(#glassStemGrad)" stroke-width="1.6"/>
+                    </g>
+
+                    <!-- Right Glass -->
+                    <g class="animate-clink-right">
+                      <!-- Base -->
+                      <ellipse cx="108" cy="98" rx="19" ry="4" fill="url(#glassStemGrad)" opacity="0.85"/>
+                      <!-- Stem -->
+                      <line x1="108" y1="62" x2="108" y2="98" stroke="url(#glassStemGrad)" stroke-width="3" stroke-linecap="round"/>
+                      <!-- Bowl Contour -->
+                      <path d="M 89 22 C 88 46, 98 63, 108 63 C 118 63, 128 46, 127 22 Z" fill="rgba(255, 255, 255, 0.08)" stroke="url(#glassStemGrad)" stroke-width="2.2"/>
+                      <!-- Wine Inside Bowl -->
+                      <g class="animate-wine-liquid" style="animation-delay: -0.4s;">
+                        <path d="M 92 34 C 92 51, 100 60, 108 60 C 116 60, 124 51, 124 34 C 118 36, 98 32, 92 34 Z" fill="url(#wineGrad)"/>
+                        <!-- Wine Reflection highlight -->
+                        <path d="M 121 36 Q 118 54 112 58" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+                      </g>
+                      <!-- Rim -->
+                      <ellipse cx="108" cy="22" rx="19" ry="3.5" fill="rgba(255,255,255,0.15)" stroke="url(#glassStemGrad)" stroke-width="1.6"/>
+                    </g>
+                  </svg>
+                </div>
+                <span class="text-[11px] font-cinzel font-bold tracking-widest text-gold-300 drop-shadow mt-0.5 uppercase">
+                  ¡Salud y Brindis de Honor!
+                </span>
+              </div>
+
+              <!-- Dynamic Emotional Quote / Subtitle (Shown if other slide active or custom quote set) -->
+              <p id="overlayCaption" class="hidden text-xs text-slate-300 font-montserrat font-light leading-relaxed max-w-[280px] drop-shadow-md mt-1 transition-all duration-500">
+                El mejor pilar para su familia, maestro de vida y amigo incondicional.
               </p>
 
               <!-- Golden Progress Bar Indicator -->
-              <div class="w-full mt-5 bg-white/20 h-1 rounded-full overflow-hidden backdrop-blur-sm">
-                <div id="timelineProgressBar" class="h-full bg-gradient-to-r from-gold-600 via-gold-400 to-amber-200 w-0 transition-all duration-100 ease-linear"></div>
-              </div>
-
-              <!-- Slides Pagination Dots -->
-              <div id="paginationDots" class="flex justify-center items-center gap-1.5 mt-2.5">
-                <!-- Dots injected via JS -->
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Player Navigation Floating Bar -->
-        <div class="mt-4 flex items-center justify-between bg-noir-800 border border-slate-700/80 rounded-2xl px-5 py-3 shadow-xl">
-          <button id="prevSlideBtn" class="p-2.5 text-slate-300 hover:text-gold-400 hover:bg-noir-700 rounded-xl transition">
-            <i class="fa-solid fa-backward-step"></i>
-          </button>
-
-          <button id="playPauseBtn" class="px-5 py-2.5 bg-gradient-to-r from-gold-500 to-amber-500 hover:from-gold-400 hover:to-amber-400 text-black font-bold rounded-xl shadow-lg transition flex items-center gap-2">
-            <i id="playPauseIcon" class="fa-solid fa-play"></i>
-            <span id="playPauseText" class="text-xs uppercase tracking-wider">Reproducir</span>
-          </button>
-
-          <button id="nextSlideBtn" class="p-2.5 text-slate-300 hover:text-gold-400 hover:bg-noir-700 rounded-xl transition">
-            <i class="fa-solid fa-forward-step"></i>
-          </button>
-
-          <div class="h-6 w-px bg-slate-700"></div>
-
-          <div class="flex items-center gap-2 text-xs text-slate-400">
-            <i class="fa-regular fa-clock text-gold-400"></i>
-            <span id="slideTimeIndicator">4s / foto</span>
-          </div>
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- RIGHT PANEL: CONTENT MANAGEMENT, CUSTOMIZATION & AUDIO -->
-    <section class="lg:col-span-5 flex flex-col gap-5">
-
-      <!-- Navigation Tabs -->
-      <div class="flex border-b border-slate-700 gap-2">
-        <button id="tabPhotosBtn" class="py-2.5 px-4 font-cinzel text-xs tracking-wider font-bold border-b-2 border-gold-400 text-gold-400 transition flex items-center gap-2">
-          <i class="fa-regular fa-images"></i> Fotografías (<span id="photoCount">3</span>)
-        </button>
-        <button id="tabAudioBtn" class="py-2.5 px-4 font-cinzel text-xs tracking-wider font-semibold border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition flex items-center gap-2">
-          <i class="fa-solid fa-music"></i> Audio y Música
-        </button>
-        <button id="tabSettingsBtn" class="py-2.5 px-4 font-cinzel text-xs tracking-wider font-semibold border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition flex items-center gap-2">
-          <i class="fa-solid fa-sliders"></i> Estilo & Texto
-        </button>
-      </div>
-
-      <!-- TAB 1: PHOTO MANAGEMENT -->
-      <div id="tabPhotosContent" class="space-y-4">
-        
-        <!-- Drag & Drop Uploader -->
-        <div id="dropZone" class="border-2 border-dashed border-gold-500/40 hover:border-gold-400 bg-noir-800/60 hover:bg-noir-800/90 rounded-2xl p-6 text-center transition cursor-pointer group">
-          <input type="file" id="fileInput" multiple accept="image/*" class="hidden">
-          <div class="w-12 h-12 mx-auto rounded-full bg-gold-500/10 text-gold-400 flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition-transform">
-            <i class="fa-solid fa-cloud-arrow-up"></i>
-          </div>
-          <p class="text-sm font-semibold text-slate-200">Cargar fotos para el Cumpleañero</p>
-          <p class="text-xs text-slate-400 mt-1">Haz clic o arrastra fotos (Formato vertical 9:16 preferido)</p>
-          <div class="mt-3 flex justify-center gap-2">
-            <span class="inline-block text-[10px] bg-slate-800 text-gold-300 border border-slate-700 px-2 py-0.5 rounded">JPG, PNG, WEBP</span>
-            <span class="inline-block text-[10px] bg-slate-800 text-gold-300 border border-slate-700 px-2 py-0.5 rounded">Múltiples fotos</span>
-          </div>
-        </div>
-
-        <!-- Slides List Card Container -->
+              <div class="w-full mt-4 bg-white/20 h-1 rounded-full overflow-hidden backdrop-blur-sm">
         <div class="space-y-2.5">
           <div class="flex items-center justify-between">
             <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Secuencia de Imágenes</span>
@@ -772,19 +820,22 @@ self.addEventListener('fetch', (e) => {
       {
         id: 1,
         url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop',
-        quote: '57 años construyendo un camino de honestidad, esfuerzo y honor.',
+        quote: '', // Former quote removed, wine clinking celebration active
+        isWineToast: true,
         transition: 'kenburns-1'
       },
       {
         id: 2,
         url: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1000&auto=format&fit=crop',
         quote: 'El mejor pilar para su familia, maestro de vida y amigo incondicional.',
+        isWineToast: false,
         transition: 'kenburns-2'
       },
       {
         id: 3,
         url: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=1000&auto=format&fit=crop',
         quote: '¡Que comience la mejor etapa! Salud, vitalidad y prosperidad siempre.',
+        isWineToast: false,
         transition: 'kenburns-3'
       }
     ];
@@ -809,6 +860,7 @@ self.addEventListener('fetch', (e) => {
     const overlayTitle = document.getElementById('overlayTitle');
     const overlayName = document.getElementById('overlayName');
     const overlayCaption = document.getElementById('overlayCaption');
+    const clinkingWineGlassesContainer = document.getElementById('clinkingWineGlassesContainer');
     const timelineProgressBar = document.getElementById('timelineProgressBar');
     const paginationDots = document.getElementById('paginationDots');
     const playPauseBtn = document.getElementById('playPauseBtn');
@@ -921,18 +973,26 @@ self.addEventListener('fetch', (e) => {
 
       const currentSlide = slides[currentIndex];
       
-      // Update Captions with smooth fade
-      overlayCaption.style.opacity = '0';
-      overlayCaption.style.transform = 'translateY(6px)';
-
-      setTimeout(() => {
-        overlayCaption.textContent = currentSlide.quote || `Un momento inolvidable lleno de dicha y alegría.`;
-        overlayCaption.style.opacity = '1';
-        overlayCaption.style.transform = 'translateY(0)';
-      }, 250);
-
       overlayTitle.textContent = inputMainTitle.value;
       overlayName.textContent = inputHonoreeName.value;
+
+      // If current slide is wine toast or has no text, show clinking wine glasses with celebratory movement
+      if (currentSlide.isWineToast || !currentSlide.quote || currentSlide.quote.trim() === '') {
+        overlayCaption.classList.add('hidden');
+        clinkingWineGlassesContainer.classList.remove('hidden');
+        clinkingWineGlassesContainer.style.opacity = '1';
+      } else {
+        clinkingWineGlassesContainer.classList.add('hidden');
+        overlayCaption.classList.remove('hidden');
+        overlayCaption.style.opacity = '0';
+        overlayCaption.style.transform = 'translateY(6px)';
+
+        setTimeout(() => {
+          overlayCaption.textContent = currentSlide.quote;
+          overlayCaption.style.opacity = '1';
+          overlayCaption.style.transform = 'translateY(0)';
+        }, 200);
+      }
 
       // Update Pagination Dots
       const dots = paginationDots.children;
@@ -1056,6 +1116,7 @@ self.addEventListener('fetch', (e) => {
       slides.forEach((slide, idx) => {
         const item = document.createElement('div');
         item.className = 'flex items-center gap-3 p-3 bg-noir-800 rounded-xl border border-slate-700/80 hover:border-gold-500/50 transition group';
+        const isToastActive = slide.isWineToast || !slide.quote;
         item.innerHTML = `
           <div class="relative w-12 h-16 rounded-lg overflow-hidden bg-black flex-shrink-0 border border-slate-600">
             <img src="${slide.url}" class="w-full h-full object-cover">
@@ -1063,8 +1124,13 @@ self.addEventListener('fetch', (e) => {
           </div>
 
           <div class="flex-1 min-w-0">
-            <label class="block text-[10px] text-slate-400 font-medium">Frase conmemorativa:</label>
-            <input type="text" data-index="${idx}" value="${slide.quote || ''}" class="slide-quote-input w-full bg-noir-900 border border-slate-700 rounded-lg px-2.5 py-1 text-xs text-slate-200 focus:outline-none focus:border-gold-500 transition mt-0.5">
+            <div class="flex items-center justify-between">
+              <label class="block text-[10px] text-slate-400 font-medium">Contenido en pantalla:</label>
+              <button class="btn-toggle-toast text-[10px] ${isToastActive ? 'text-gold-400 font-bold' : 'text-slate-400 hover:text-gold-300'} transition" data-index="${idx}">
+                <i class="fa-solid fa-wine-glass text-xs mr-1"></i>${isToastActive ? 'Copas Activas' : 'Poner Copas'}
+              </button>
+            </div>
+            <input type="text" data-index="${idx}" value="${slide.quote || ''}" placeholder="${isToastActive ? 'Copas de vino chocando con brindis activo' : 'Escribe una frase...'}" class="slide-quote-input w-full bg-noir-900 border border-slate-700 rounded-lg px-2.5 py-1 text-xs text-slate-200 focus:outline-none focus:border-gold-500 transition mt-0.5">
           </div>
 
           <div class="flex flex-col gap-1 items-center justify-center">
@@ -1079,11 +1145,27 @@ self.addEventListener('fetch', (e) => {
         slidesListContainer.appendChild(item);
       });
 
+      // Bind toggle toast glasses button
+      document.querySelectorAll('.btn-toggle-toast').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const index = parseInt(btn.getAttribute('data-index'), 10);
+          slides[index].isWineToast = !slides[index].isWineToast;
+          if (slides[index].isWineToast) {
+            slides[index].quote = '';
+          }
+          renderPhotoList();
+          if (index === currentIndex) {
+            updateCaptionDisplay();
+          }
+        });
+      });
+
       // Bind input events for live quote updating
       document.querySelectorAll('.slide-quote-input').forEach(input => {
         input.addEventListener('input', (e) => {
           const index = parseInt(e.target.getAttribute('data-index'), 10);
           slides[index].quote = e.target.value;
+          slides[index].isWineToast = e.target.value.trim() === '';
           if (index === currentIndex) {
             updateCaptionDisplay();
           }
@@ -1108,11 +1190,12 @@ self.addEventListener('fetch', (e) => {
 
     function deleteSlide(index) {
       if (slides.length <= 1) {
-        // Keep at least 1 placeholder
+        // Keep at least 1 placeholder with clinking wine glasses celebration
         slides = [{
           id: Date.now(),
           url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop',
-          quote: 'Un día memorable para celebrar la vida y la familia',
+          quote: '',
+          isWineToast: true,
           transition: 'kenburns-1'
         }];
       } else {
@@ -1138,7 +1221,8 @@ self.addEventListener('fetch', (e) => {
           const newSlide = {
             id: Date.now() + Math.random(),
             url: e.target.result,
-            quote: idx === 0 ? '57 Años de sabiduría, momentos inolvidables y gran templanza.' : 'Honrando un camino extraordinario día a día.',
+            quote: '',
+            isWineToast: idx === 0,
             transition: transitions[idx % transitions.length]
           };
           slides.push(newSlide);
@@ -1713,12 +1797,112 @@ self.addEventListener('fetch', (e) => {
             rCtx.shadowBlur = 12;
             rCtx.fillText(inputHonoreeName.value || 'Un Gran Caballero', W / 2, H - 280);
 
-            // Slide Quote with text wrap
-            rCtx.font = '300 26px "Montserrat", sans-serif';
-            rCtx.fillStyle = '#e2e8f0';
-            rCtx.shadowBlur = 8;
-            const quoteText = slideData.quote || '57 años de carácter, sabiduría y momentos inolvidables.';
-            wrapText(rCtx, quoteText, W / 2, H - 200, W - 220, 36);
+            const isWineSlide = slideData.isWineToast || !slideData.quote || slideData.quote.trim() === '';
+
+            if (isWineSlide) {
+              // Draw 2 Clinking Wine Glasses on 1080p Canvas with movement oscillation
+              rCtx.save();
+              const clinkPhase = (currentFrame % 75) / 75; // Clinking cycle every ~2.5s
+              let tiltLeft = 0;
+              let tiltRight = 0;
+              let sparkleScale = 0;
+
+              if (clinkPhase < 0.3) {
+                tiltLeft = -0.15 * Math.sin(clinkPhase / 0.3 * Math.PI);
+                tiltRight = 0.15 * Math.sin(clinkPhase / 0.3 * Math.PI);
+              } else if (clinkPhase < 0.45) {
+                tiltLeft = 0.12 * Math.sin((clinkPhase - 0.3) / 0.15 * Math.PI);
+                tiltRight = -0.12 * Math.sin((clinkPhase - 0.3) / 0.15 * Math.PI);
+                sparkleScale = Math.sin((clinkPhase - 0.3) / 0.15 * Math.PI) * 1.5;
+              }
+
+              const centerY = H - 200;
+
+              // Draw Left Glass
+              rCtx.save();
+              rCtx.translate(W / 2 - 38, centerY + 20);
+              rCtx.rotate(tiltLeft);
+              rCtx.strokeStyle = '#d4af37';
+              rCtx.lineWidth = 4;
+              // Bowl
+              rCtx.beginPath();
+              rCtx.moveTo(-22, -45);
+              rCtx.bezierCurveTo(-22, 0, 22, 0, 22, -45);
+              rCtx.stroke();
+              // Wine liquid
+              rCtx.fillStyle = '#b31237';
+              rCtx.beginPath();
+              rCtx.moveTo(-18, -25);
+              rCtx.bezierCurveTo(-18, -4, 18, -4, 18, -25);
+              rCtx.fill();
+              // Stem & base
+              rCtx.beginPath();
+              rCtx.moveTo(0, 0);
+              rCtx.lineTo(0, 36);
+              rCtx.stroke();
+              rCtx.beginPath();
+              rCtx.ellipse(0, 36, 18, 4, 0, 0, Math.PI * 2);
+              rCtx.fillStyle = '#d4af37';
+              rCtx.fill();
+              rCtx.restore();
+
+              // Draw Right Glass
+              rCtx.save();
+              rCtx.translate(W / 2 + 38, centerY + 20);
+              rCtx.rotate(tiltRight);
+              rCtx.strokeStyle = '#d4af37';
+              rCtx.lineWidth = 4;
+              // Bowl
+              rCtx.beginPath();
+              rCtx.moveTo(-22, -45);
+              rCtx.bezierCurveTo(-22, 0, 22, 0, 22, -45);
+              rCtx.stroke();
+              // Wine liquid
+              rCtx.fillStyle = '#b31237';
+              rCtx.beginPath();
+              rCtx.moveTo(-18, -25);
+              rCtx.bezierCurveTo(-18, -4, 18, -4, 18, -25);
+              rCtx.fill();
+              // Stem & base
+              rCtx.beginPath();
+              rCtx.moveTo(0, 0);
+              rCtx.lineTo(0, 36);
+              rCtx.stroke();
+              rCtx.beginPath();
+              rCtx.ellipse(0, 36, 18, 4, 0, 0, Math.PI * 2);
+              rCtx.fillStyle = '#d4af37';
+              rCtx.fill();
+              rCtx.restore();
+
+              // Center Clink Sparkle Flare
+              if (sparkleScale > 0) {
+                rCtx.save();
+                rCtx.translate(W / 2, centerY - 8);
+                rCtx.scale(sparkleScale, sparkleScale);
+                rCtx.fillStyle = '#fff4d0';
+                rCtx.shadowColor = '#ffd700';
+                rCtx.shadowBlur = 20;
+                rCtx.beginPath();
+                rCtx.arc(0, 0, 8, 0, Math.PI * 2);
+                rCtx.fill();
+                rCtx.restore();
+              }
+
+              // Toast Label
+              rCtx.font = '700 24px "Cinzel", serif';
+              rCtx.fillStyle = '#f7dc6f';
+              rCtx.shadowColor = '#000000';
+              rCtx.shadowBlur = 10;
+              rCtx.fillText('¡SALUD Y BRINDIS DE HONOR!', W / 2, H - 120);
+
+              rCtx.restore();
+            } else {
+              // Slide Quote with text wrap
+              rCtx.font = '300 26px "Montserrat", sans-serif';
+              rCtx.fillStyle = '#e2e8f0';
+              rCtx.shadowBlur = 8;
+              wrapText(rCtx, slideData.quote, W / 2, H - 200, W - 220, 36);
+            }
 
             // Golden Progress Bar at Bottom
             const barW = W - 200;
